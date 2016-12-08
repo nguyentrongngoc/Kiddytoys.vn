@@ -8,7 +8,7 @@
 	$pass = $_POST["pass"];
 	$phone = $_POST["phone"];
 	$email = $_POST["email"];
-	$repass = $_POST["repass"]; //để so sánh vs pass, viết thêm hàm kiểm tra điều kiện. Nhưng viết php lâu, k tối ưu web? nên dùng javascrip.Nếu dùng thì bỏ ở trang register.html?chèn javascrip vào đó?
+	//để so sánh vs pass, viết thêm hàm kiểm tra điều kiện. Nhưng viết php lâu, k tối ưu web? nên dùng javascrip.Nếu dùng thì bỏ ở trang register.html?chèn javascrip vào đó?
 		
 	//kiem tra thong tin, cũng nên dùng javascrip. Mấy bước kiểm tra lỗi cú pháp lỗi nhập, không tương tác vs csdl.
 	if(isset($_POST['submit'])){
@@ -19,7 +19,7 @@
 	//Kiem tra trung lap du lieu
 	$check = $db->executeQuery("SELECT count(name) FROM user WHERE name = '$name'");
 	$row = mysqli_fetch_assoc($check);
-	if($row['count(username)'] > 0){
+	if($row['count(name)'] > 0){
 			echo "<script> alert('This account has already created!');</script>";
 			header('Location:register.html');
 	}

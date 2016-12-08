@@ -1,4 +1,8 @@
+ <?php
+ session_start();
+ ?>
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <script type="text/javascript" src="assets/front/js/html5-fix.js"></script>
@@ -111,9 +115,10 @@ thẻ đường dẫn tuyệt đối
                             <div class="control_usernav">
                                 <ul class="clearfix" role="menu">
                 <?php
-                    if (isset($_SESSION['name'])){
-                        echo "<li><a href='#'>Hi, ".$_SESSION['name']."</a></li>";
-                        echo "<li><a href='logout.php'>Log out</a></li>";
+                       
+                        if (isset($_SESSION['email'])){
+                            echo "<li><a href='#'>Hi, ".$_SESSION['email']."</a></li>";
+                            echo "<li><a href='logout.php'>Log out</a></li>";
                     }else{
                         echo "<li><a href='login.html'>Đăng nhập</a></li><li><a href='register.html'>Đăng kí</a></li>";
                     }
