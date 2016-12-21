@@ -408,7 +408,7 @@ thẻ đường dẫn tuyệt đối
                             echo '<h3 title="Xe điều khiển cyklon" class="p-title">';
                                 echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
                             echo '</h3>';
-                            echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">360,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
+                            echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
                         echo '</div></div></div>';
 				
 					}
