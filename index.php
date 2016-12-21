@@ -131,25 +131,17 @@ thẻ đường dẫn tuyệt đối
                             </div>
                         </div>                
                     </li>
-                        <!-- -->
-                     <li> 
-                        <div class="h_usercontrol">
-                            <button type="button">
-                                <i class="fa fa-bell icon"></i>
-                            </button>
-                        </div>
-                    </li>
                     <li>
                         <div class="h_usercontrol">
-                            <button type="button" onclick="javascript:view_cart()">
+						<form action="cart.php" method="get">
+                            <button type="submit" onclick="javascript:view_cart()">
                                 <i class="fa fa-shopping-cart icon"></i>
                                 <span class="total-items">0</span>
-                                
                                 <span>
                                     <b>Giỏ hàng</b> 
                                 </span>
-                                
                             </button>
+						</form>
                         </div>
                     </li>
                         <!-- -->

@@ -383,74 +383,51 @@ thẻ đường dẫn tuyệt đối
         <h1 class="clearfix title-lg border f-title">
             <span>THÔNG TIN SẢN PHẨM</span>
         </h1>
-        <div class="clearfix row row-mar-20" id="home_productnavcnh">
-            <?php 
-				$idproduct = $_GET['product'];
-				mysql_connect("localhost","root","");
-				mysql_select_db("kiddytoys");
-				$sql = mysql_query("SELECT Idproduce, productname, price, category, imglink FROM product WHERE Idproduce = '$idproduct'");
-				$row=mysql_fetch_array($sql);
-				$category=$row["category"];
-			?>
-			<div class="col-sm-10 col-xs-12 col-padd-20">
-                
-                    <div class="clearfix" id="home-nav-group">
-                    
-                        <div class="clearfix" id="home-nav-product">
-                            
-                            <div class="col-xs-8 pimg-lg">
-								<?php	echo '<img src="'.$row["imglink"].'"class="img-responsive img-lg"/>'; ?>
-                            </div>
-                            <div class="col-xs-4  p-list">
-                            <?php	
-								echo '<h2 style="color: blue">Tên sản phẩm:	'.$row["productname"].'</h2>'; 
-								echo '<h4>Loại sản phẩm:<span style="color: red">'.$row["category"].'</span></h4>';
-								echo '<h4 class="p-price" itemprop="price">Giá: <s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice" style="color: red">'.$row["price"].'&nbsp;<u>đ</u></b></h4	>'; 
-								echo '<h4>Mô tả:<span style="color: red"></span></h4>';
-								echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-danger" name="product" value='.$row["Idproduce"].'>Đặt mua</button></form>';
-							?>
-							</div>
-                        
-                        </div>
-                        
-                        <div class="clearfix nav-caption row">
-                            <div class="col-md-9 col-xs-3 caption-text">
-                                <h2 class="title">
-                                    Sản phẩm liên quan
-                                </h2>
-								<div class="row five-cols-products" id="products-group">
-				<?php
-					
-					$res=mysql_query("SELECT productname, price,category,imglink, Idproduce	 FROM product where category='$category'");
-					while($row=mysql_fetch_array($res)){
-						echo '<div class="item">';
-							echo '<div class="p-item" itemscope >';
-								echo '<figure class="p-img">';
-									echo '<a href="#" itemprop="url">';
-										echo '<img src="'.$row["imglink"].'" class="img-responsive" itemprop="image" >';
-                                    echo '</a>';
-								echo '</figure>';
-                        echo '<div class="clearfix p-caption">';
-                            echo '<h3 title="'.$row["productname"].'" class="p-title">';
-                                echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
-                            echo '</h3>';
-                            echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
-							
-						echo '</div></div></div>';
-				
-					}
-				
-				?>
-								</div>
-                            </div>
-                                <!-- -->                             
-                        </div>    
-                    </div>
-                </div>
-
-        </div>
+       
+	   <?php
+    if(isset($_SESSION["products"]))
+    {
+        $total = 0;
+        echo '<form method="post" action="PAYMENT-GATEWAY">';
+        echo '<ul>';
+        $cart_items = 0;
+        foreach ($_SESSION["products"] as $cart_itm)
+        {
+           $product_code = $cart_itm["code"];
+           $results = $mysqli->query("SELECT product_name,product_desc, price FROM products WHERE product_code='$product_code' LIMIT 1");
+           $obj = $results->fetch_object();
+            
+            echo '<li class="cart-itm">';
+            echo '<span class="remove-itm"><a href="cart_update.php?removep='.$cart_itm["code"].'&return_url='.$current_url.'">&times;</a></span>';
+            echo '<div class="p-price">'.$currency.$obj->price.'</div>';
+            echo '<div class="product-info">';
+            echo '<h3>'.$obj->product_name.' (Code :'.$product_code.')</h3> ';
+            echo '<div class="p-qty">Qty : '.$cart_itm["qty"].'</div>';
+            echo '<div>'.$obj->product_desc.'</div>';
+            echo '</div>';
+            echo '</li>';
+            $subtotal = ($cart_itm["price"]*$cart_itm["qty"]);
+            $total = ($total + $subtotal);
+ 
+            echo '<input type="hidden" name="item_name['.$cart_items.']" value="'.$obj->product_name.'" />';
+            echo '<input type="hidden" name="item_code['.$cart_items.']" value="'.$product_code.'" />';
+            echo '<input type="hidden" name="item_desc['.$cart_items.']" value="'.$obj->product_desc.'" />';
+            echo '<input type="hidden" name="item_qty['.$cart_items.']" value="'.$cart_itm["qty"].'" />';
+            $cart_items ++;
+            
+        }
+        echo '</ul>';
+        echo '<span class="check-out-txt">';
+        echo '<strong>Total : '.$currency.$total.'</strong>  ';
+        echo '</span>';
+        echo '</form>';
+        
+    }else{
+        echo 'Your Cart is empty';
+    }
+?>
     </div>
-    </div>
+</div>
 	
 <script>
 $('.five-cols-products').slick({
