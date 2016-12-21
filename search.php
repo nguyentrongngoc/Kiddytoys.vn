@@ -515,10 +515,11 @@ thẻ đường dẫn tuyệt đối
              
             <?php
 					$per_page = 12;
+					$key = $_GET["keyword"];
 					mysql_connect("localhost","root","");
 					mysql_select_db("kiddytoys");
 					//count product
-					$res_cou = mysql_query("SELECT Idproduce from product");
+					$res_cou = mysql_query("SELECT Idproduce from product WHERE productname LIKE '%$key%' or category like '%$key%'");
 					$cou = mysql_num_rows($res_cou);
 					if(isset($_GET["page"]))
 						$page = $_GET["page"];
@@ -532,7 +533,7 @@ thẻ đường dẫn tuyệt đối
 					else{
 						$page_num = ($page*$per_page) -	$per_page;
 					}
-					$res=mysql_query("SELECT productname, price,category,imglink, Idproduce	 FROM product limit $page_num, $per_page");
+					$res=mysql_query("SELECT productname, price,category,imglink, Idproduce	 FROM product WHERE productname LIKE '%$key%' or category like '%$key%' limit $page_num, $per_page");
 					while($row=mysql_fetch_array($res)){
 						echo '<div class="item">';
 							echo '<div class="p-item" itemscope >';
