@@ -371,64 +371,6 @@ thẻ đường dẫn tuyệt đối
 <div class="container">
     
 <div class="clearfix hidden-xs">
-    <h2 class="clearfix title-lg border f-title">
-        <span>Sản phẩm <b>HOT</b></span>
-    </h2>
-    <div class="row five-cols-products" id="products-group">  
-             
-            <?php
-					$per_page = 12;
-					mysql_connect("localhost","root","");
-					mysql_select_db("kiddytoys");
-					//count product
-					$res_cou = mysql_query("SELECT Idproduce from product");
-					$cou = mysql_num_rows($res_cou);
-					if(isset($_GET["page"]))
-						$page = $_GET["page"];
-					else $page = 0;
-					if($page=="" || $page < "1"|| $page=="1"){
-						$page_num = 0;
-					}
-					else if($page > ceil($cou/$per_page)){
-						$page_num =  ceil($cou/$per_page);
-					}
-					else{
-						$page_num = ($page*$per_page) -	$per_page;
-					}
-					$res=mysql_query("SELECT productname, price,category,imglink, Idproduce	 FROM product limit $page_num, $per_page");
-					while($row=mysql_fetch_array($res)){
-						echo '<div class="item">';
-							echo '<div class="p-item" itemscope >';
-								echo '<figure class="p-img">';
-									echo '<a href="http://Kiddytoys.vn/xedieukhiencyklon.html" itemprop="url">';
-										echo '<img src="'.$row["imglink"].'" alt="Xe điều khiển cyklon" title="Xe điều khiển cyklon" class="img-responsive" itemprop="image" >';
-                                    echo '</a>';
-								echo '</figure>';
-                        echo '<div class="clearfix p-caption">';
-                            echo '<h3 title="Xe điều khiển cyklon" class="p-title">';
-                                echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
-                            echo '</h3>';
-                            echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
-                        echo '</div></div></div>';
-				
-					}
-				//count number of page
-				$a = ceil($cou/$per_page); //a is number of page
-				?>
-		</div>
-					<div class="row">
-						<ul class="pagination alg-right-pad">
-							<?php
-								for($b = 1; $b <= $a; $b++){
-								?><li><a href="index.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php	
-							}
-							?>
-						</ul>
-					</div>
-        
-</div>
-
-
 
 <a name="home_scrollproduct" id="home_scrollproduct"></a>
     <div class="clearfix">
@@ -566,6 +508,62 @@ thẻ đường dẫn tuyệt đối
     
     </div>
 
+    <h2 class="clearfix title-lg border f-title">
+        <span>Tất Cả Sản Phẩm</span>
+    </h2>
+    <div class="row five-cols-products" id="products-group">  
+             
+            <?php
+					$per_page = 12;
+					mysql_connect("localhost","root","");
+					mysql_select_db("kiddytoys");
+					//count product
+					$res_cou = mysql_query("SELECT Idproduce from product");
+					$cou = mysql_num_rows($res_cou);
+					if(isset($_GET["page"]))
+						$page = $_GET["page"];
+					else $page = 0;
+					if($page=="" || $page < "1"|| $page=="1"){
+						$page_num = 0;
+					}
+					else if($page > ceil($cou/$per_page)){
+						$page_num =  ceil($cou/$per_page);
+					}
+					else{
+						$page_num = ($page*$per_page) -	$per_page;
+					}
+					$res=mysql_query("SELECT productname, price,category,imglink, Idproduce	 FROM product limit $page_num, $per_page");
+					while($row=mysql_fetch_array($res)){
+						echo '<div class="item">';
+							echo '<div class="p-item" itemscope >';
+								echo '<figure class="p-img">';
+									echo '<a href="http://Kiddytoys.vn/xedieukhiencyklon.html" itemprop="url">';
+										echo '<img src="'.$row["imglink"].'" alt="Xe điều khiển cyklon" title="Xe điều khiển cyklon" class="img-responsive" itemprop="image" >';
+                                    echo '</a>';
+								echo '</figure>';
+                        echo '<div class="clearfix p-caption">';
+                            echo '<h3 title="Xe điều khiển cyklon" class="p-title">';
+                                echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
+                            echo '</h3>';
+                            echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
+                        echo '</div></div></div>';
+				
+					}
+				//count number of page
+				$a = ceil($cou/$per_page); //a is number of page
+				?>
+		</div>
+					<div class="row">
+						<ul class="pagination alg-right-pad">
+							<?php
+								for($b = 1; $b <= $a; $b++){
+								?><li><a href="index.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php	
+							}
+							?>
+						</ul>
+					</div>
+        
+</div>
 
 
 
