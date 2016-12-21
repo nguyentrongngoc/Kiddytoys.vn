@@ -384,28 +384,115 @@ thẻ đường dẫn tuyệt đối
             <span>THÔNG TIN SẢN PHẨM</span>
         </h1>
         <div class="clearfix row row-mar-20" id="home_productnavcnh">
-        
-                        
-                <div class="col-sm-6 col-xs-12 col-padd-20">
+            <?php 
+				//$idproduct = $_POST['product'];
+				$idproduct = 10; //test id
+				mysql_connect("localhost","root","");
+				mysql_select_db("kiddytoys");
+				$sql = mysql_query("SELECT productname, price, category, imglink FROM product WHERE Idproduce = '$idproduct'");
+				$row=mysql_fetch_array($sql);
+				$category=$row["category"];
+			?>
+			<div class="col-sm-10 col-xs-12 col-padd-20">
                 
                     <div class="clearfix" id="home-nav-group">
                     
                         <div class="clearfix" id="home-nav-product">
-                <?php 
-				//$idproduct = $_POST['product'];
-				$idproduct = 1; //test id
-				mysql_connect("localhost","root","");
-				mysql_select_db("kiddytoys");
-				$sql = mysql_query("SELECT productname, price, category, imglink FROM product WHERE idproduct = '$idproduct'");
-				$row=mysql_fetch_array($sql);
+                            
+                            <div class="col-xs-8 pimg-lg">
+								<?php	echo '<img src="'.$row["imglink"].'"class="img-responsive img-lg"/>'; ?>
+                            </div>
+                            <div class="col-xs-4  p-list">
+                                <?php	echo '<h2 style="color: blue">Tên sản phẩm:	'.$row["productname"].'</h2>'; ?>
+								<?php 	echo '<h4>Loại sản phẩm:<span style="color: red">'.$row["category"].'</span></h4>'; ?>
+								<?php	echo '<h4 class="p-price" itemprop="price">Giá: <s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice" style="color: red">'.$row["price"].'&nbsp;<u>đ</u></b></h4	>'; ?>
+								<?php 	echo '<h4>Mô tả:<span style="color: red"></span></h4>'; ?>
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="clearfix nav-caption row">
+                            <div class="col-md-9 col-xs-3 caption-text">
+                                <h2 class="title">
+                                    Sản phẩm liên quan
+                                </h2>
+								<div class="row five-cols-products" id="products-group">
+				<?php
+					
+					$res=mysql_query("SELECT productname, price,category,imglink, Idproduce	 FROM product where category='$category'");
+					while($row=mysql_fetch_array($res)){
+						echo '<div class="item">';
+							echo '<div class="p-item" itemscope >';
+								echo '<figure class="p-img">';
+									echo '<a href="#" itemprop="url">';
+										echo '<img src="'.$row["imglink"].'" class="img-responsive" itemprop="image" >';
+                                    echo '</a>';
+								echo '</figure>';
+                        echo '<div class="clearfix p-caption">';
+                            echo '<h3 title="'.$row["productname"].'" class="p-title">';
+                                echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
+                            echo '</h3>';
+                            echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
+                        echo '</div></div></div>';
 				
-			?>
-						</div>
+					}
+				
+				?>
+								</div>
+                            </div>
+                                <!-- -->                             
+                        </div>    
                     </div>
-                </div>                              
+                </div>
+
         </div>
     </div>
     </div>
+	
+<script>
+$('.five-cols-products').slick({
+  dots: false,
+  navs: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  adaptiveHeight: true,
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
     <!--FOOTER-->
     <footer id="footer" class="clearfix">
         
