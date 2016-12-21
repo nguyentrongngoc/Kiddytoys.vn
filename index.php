@@ -415,6 +415,7 @@ thẻ đường dẫn tuyệt đối
 				//count number of page
 				$a = ceil($cou/$per_page); //a is number of page
 				?>
+		</div>
 					<div class="row">
 						<ul class="pagination alg-right-pad">
 							<?php
@@ -424,8 +425,7 @@ thẻ đường dẫn tuyệt đối
 							?>
 						</ul>
 					</div>
-    
-	</div>        
+        
 </div>
 
 
