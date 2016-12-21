@@ -509,7 +509,7 @@ thẻ đường dẫn tuyệt đối
     </div>
 
     <h2 class="clearfix title-lg border f-title">
-        <span>Tất Cả Sản Phẩm</span>
+        <span>Sản Phẩm Tìm Kiếm</span>
     </h2>
     <div class="row five-cols-products" id="products-group">  
              
