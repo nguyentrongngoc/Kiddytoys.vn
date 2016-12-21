@@ -186,7 +186,7 @@ thẻ đường dẫn tuyệt đối
             </a>
         </div>
     <!--                 2 FORM TÌM KIẾM VÌ TRONG DIV hiển thị cho di động-->  
-    <form action="san-pham/search.html" method="get">
+    <form action="san-pham/search.php" method="get">
         <div>
             <input type="text" name="q" value="" placeholder="Bạn đang cần tìm..."/>
             <button type="submit">
