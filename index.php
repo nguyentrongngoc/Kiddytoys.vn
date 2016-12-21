@@ -371,148 +371,62 @@ thẻ đường dẫn tuyệt đối
 <div class="container">
     
 <div class="clearfix hidden-xs">
-        <h2 class="clearfix title-lg border f-title">
-            <span>Sản phẩm <b>HOT</b></span>
-
-        </h2>
-        
-        <div class="row five-cols-products" id="products-group">
-        
-            <div class="item">
-                <div class="p-item" itemscope >
-                        <figure class="p-img">
-                            <a href="xetruot3banh.html" itemprop="url">
-                            <img src="uploads/products/xetruot3banh.jpg" alt="Xe trượt 3 bánh" title="Xe trượt 3 bánh" class="img-responsive" itemprop="image" >
-                                                        </a>
-                        </figure>
-                <div class="clearfix p-caption">
-                            <h3 title="Xe trượt 3 bánh" class="p-title">
-                                <a href="http://Kiddytoys.vn/xetruot3banh.html" itemprop="name">Xe trượt 3 bánh</a>
-                            </h3>
-                            <p class="p-price" itemprop="price"><s itemprop="highPrice">610,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">510,000&nbsp;<u>đ</u></b></p>
-            </div>
+    <h2 class="clearfix title-lg border f-title">
+        <span>Sản phẩm <b>HOT</b></span>
+    </h2>
+    <div class="row five-cols-products" id="products-group">  
+             
+            <?php
+					$per_page = 12;
+					mysql_connect("localhost","root","");
+					mysql_select_db("kiddytoys");
+					//count product
+					$res_cou = mysql_query("SELECT Idproduce from product");
+					$cou = mysql_num_rows($res_cou);
+					if(isset($_GET["page"]))
+						$page = $_GET["page"];
+					else $page = 0;
+					if($page=="" || $page < "1"|| $page=="1"){
+						$page_num = 0;
+					}
+					else if($page > ceil($cou/$per_page)){
+						$page_num =  ceil($cou/$per_page);
+					}
+					else{
+						$page_num = ($page*$per_page) -	$per_page;
+					}
+					$res=mysql_query("SELECT productname, price,category,imglink, Idproduce	 FROM product limit $page_num, $per_page");
+					while($row=mysql_fetch_array($res)){
+						echo '<div class="item">';
+							echo '<div class="p-item" itemscope >';
+								echo '<figure class="p-img">';
+									echo '<a href="http://Kiddytoys.vn/xedieukhiencyklon.html" itemprop="url">';
+										echo '<img src="'.$row["imglink"].'" alt="Xe điều khiển cyklon" title="Xe điều khiển cyklon" class="img-responsive" itemprop="image" >';
+                                    echo '</a>';
+								echo '</figure>';
+                        echo '<div class="clearfix p-caption">';
+                            echo '<h3 title="Xe điều khiển cyklon" class="p-title">';
+                                echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
+                            echo '</h3>';
+                            echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">360,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
+                        echo '</div></div></div>';
+				
+					}
+				//count number of page
+				$a = ceil($cou/$per_page); //a is number of page
+				?>
+					<div class="row">
+						<ul class="pagination alg-right-pad">
+							<?php
+								for($b = 1; $b <= $a; $b++){
+								?><li><a href="index.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php	
+							}
+							?>
+						</ul>
+					</div>
+    
+	</div>        
 </div>
-</div>
-            
-            <div class="item">
-                <div class="p-item" itemscope >
-                        <figure class="p-img">
-                            <a href="http://Kiddytoys.vn/xedieukhiencyklon.html" itemprop="url">
-                            <img src="uploads/products/xedieukhiencyklon.jpg" alt="Xe điều khiển cyklon" title="Xe điều khiển cyklon" class="img-responsive" itemprop="image" >
-                                                        </a>
-                        </figure>
-                        <div class="clearfix p-caption">
-                            <h3 title="Xe điều khiển cyklon" class="p-title">
-                                <a href="http://Kiddytoys.vn/xedieukhiencyklon.html" itemprop="name">Xe điều khiển cyklon</a>
-                            </h3>
-                            <p class="p-price" itemprop="price"><s itemprop="highPrice">360,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">260,000&nbsp;<u>đ</u></b></p>
-                        </div>
-                </div>
-            </div>
-            
-            <div class="item">
-                <div class="p-item" itemscope >
-                        <figure class="p-img">
-                            <a href="http://Kiddytoys.vn/tranh-da-in-hinh-happy-wedding-p915.html" itemprop="url">
-                            <img src="uploads/products/sungnuoc2nong.jpg" alt="Súng nước 2 nòng" title="Súng nước 2 nòng" class="img-responsive" itemprop="image" >
-                                                        </a>
-                        </figure>
-                        <div class="clearfix p-caption">
-                            <h3 title="Súng nước 2 nòng" class="p-title">
-                                <a href="http://Kiddytoys.vn/sungnuoc2nong.html" itemprop="name">Súng nước 2 nòng</a>
-                            </h3>
-                            <p class="p-price" itemprop="price"><s itemprop="highPrice">65,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">45,000&nbsp;<u>đ</u></b></p>
-                        </div>
-                </div>
-            </div>
-            
-            <div class="item">
-                <div class="p-item" itemscope >
-                        <figure class="p-img">
-                            <a href="http://Kiddytoys.vn/bupbesunset.html" itemprop="url">
-                            <img src="uploads/products/bupbesunset.jpg" alt="Búp bê sunset" title="Búp bê sunset" class="img-responsive" itemprop="image" >
-                                                        </a>
-                        </figure>
-                        <div class="clearfix p-caption">
-                            <h3 title="Búp bê sunset" class="p-title">
-                                <a href="http://Kiddytoys.vn/bupbesunset.html" itemprop="name">Búp bê sunset</a>
-                            </h3>
-                            <p class="p-price" itemprop="price"><s itemprop="highPrice">95,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">65,000&nbsp;<u>đ</u></b></p>
-                        </div>
-                </div>
-            </div>
-            
-            <div class="item">
-                <div class="p-item" itemscope >
-                        <figure class="p-img">
-                            <a href="http://Kiddytoys.vn/pokemoncobalon.html" itemprop="url">
-                            <img src="uploads/products/pokemoncobalon.jpg" alt="Pokemon Cobalon" title="Pokemmon Cobalon" class="img-responsive" itemprop="image" >
-                                                        </a>
-                        </figure>
-                        <div class="clearfix p-caption">
-                            <h3 title="Pokemon Cobalon" class="p-title">
-                                <a href="http://Kiddytoys.vn/pokemoncobalon.html" itemprop="name">Pokemon Cobalon</a>
-                            </h3>
-                            <p class="p-price" itemprop="price"><s itemprop="highPrice">90,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">60,000&nbsp;<u>đ</u></b></p>
-                        </div>
-                </div>
-            </div>
-            
-            <div class="item">
-                <div class="p-item" itemscope >
-                        <figure class="p-img">
-                            <a href="http://Kiddytoysid.vn/sungnhuahittuong.html" itemprop="url">
-                            <img src="uploads/products/sungnhuahittuong.jpg" alt="Súng Nhựa Hít Tường" title="Súng nhựa hít tường" class="img-responsive" itemprop="image" >
-                                                        </a>
-                        </figure>
-                        <div class="clearfix p-caption">
-                            <h3 title="Súng nhựa hít tường" class="p-title">
-                                <a href="http://Kiddytoys.vn/sungnhuahittuong.html" itemprop="name">Súng nhựa hít tường</a>
-                            </h3>
-                            <p class="p-price" itemprop="price"><s itemprop="highPrice">75,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">55,000&nbsp;<u>đ</u></b></p>
-                        </div>
-                </div>
-            </div>
-            
-            <div class="item">
-                <div class="p-item" itemscope >
-                        <figure class="p-img">
-                            <a href="http://lovin.vn/robotbanbi.html" itemprop="url">
-                            <img src="uploads/products/robotbanbi.jpg" alt="RoBot Bắn Bi" title="RoBot Bắn Bi" class="img-responsive" itemprop="image" >
-                                                        </a>
-                        </figure>
-                        <div class="clearfix p-caption">
-                            <h3 title="RoBot Bắn Bi" class="p-title">
-                                <a href="http://Kiddytoys.vn/robotbanbi.html" itemprop="name">RoBot Bắn Bi</a>
-                            </h3>
-                            <p class="p-price" itemprop="price"><s itemprop="highPrice">100,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">90,000&nbsp;<u>đ</u></b></p>
-                        </div>
-                </div>
-            </div>
-            
-            <div class="item">
-                <div class="p-item" itemscope >
-                        <figure class="p-img">
-                            <a href="http://Kiddytoys.vn/butsap48mau.html" itemprop="url">
-                            <img src="uploads/products/butsap48mau.jpg" alt="Bút sáp 48 màu" title="Bút sáp 48 màu" class="img-responsive" itemprop="image" >
-                                                        </a>
-                        </figure>
-                        <div class="clearfix p-caption">
-                            <h3 title="Bút sáp 48 màu" class="p-title">
-                                <a href="http://Kiddytoys.vn/butsap48mau.html" itemprop="name">Bút sáp 48 màu</a>
-                            </h3>
-                            <p class="p-price" itemprop="price"><s itemprop="highPrice">60,000&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">50,000&nbsp;<u>đ</u></b></p>
-                        </div>
-                </div>
-            </div>
-            
-            
-            
-                    
-        </div>
-        
-        
-    </div>
 
 
 
