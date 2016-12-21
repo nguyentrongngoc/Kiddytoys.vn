@@ -385,8 +385,7 @@ thẻ đường dẫn tuyệt đối
         </h1>
         <div class="clearfix row row-mar-20" id="home_productnavcnh">
             <?php 
-				//$idproduct = $_POST['product'];
-				$idproduct = 10; //test id
+				$idproduct = $_GET['product'];
 				mysql_connect("localhost","root","");
 				mysql_select_db("kiddytoys");
 				$sql = mysql_query("SELECT productname, price, category, imglink FROM product WHERE Idproduce = '$idproduct'");
@@ -403,11 +402,14 @@ thẻ đường dẫn tuyệt đối
 								<?php	echo '<img src="'.$row["imglink"].'"class="img-responsive img-lg"/>'; ?>
                             </div>
                             <div class="col-xs-4  p-list">
-                                <?php	echo '<h2 style="color: blue">Tên sản phẩm:	'.$row["productname"].'</h2>'; ?>
-								<?php 	echo '<h4>Loại sản phẩm:<span style="color: red">'.$row["category"].'</span></h4>'; ?>
-								<?php	echo '<h4 class="p-price" itemprop="price">Giá: <s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice" style="color: red">'.$row["price"].'&nbsp;<u>đ</u></b></h4	>'; ?>
-								<?php 	echo '<h4>Mô tả:<span style="color: red"></span></h4>'; ?>
-                            </div>
+                            <?php	
+								echo '<h2 style="color: blue">Tên sản phẩm:	'.$row["productname"].'</h2>'; 
+								echo '<h4>Loại sản phẩm:<span style="color: red">'.$row["category"].'</span></h4>';
+								echo '<h4 class="p-price" itemprop="price">Giá: <s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice" style="color: red">'.$row["price"].'&nbsp;<u>đ</u></b></h4	>'; 
+								echo '<h4>Mô tả:<span style="color: red"></span></h4>';
+								echo '<form action="product.php" method="GET"><button type="submit" class="btn btn-success" name="product" value='.$row["Idproduce"].'>Chi tiết</button></form>';
+							?>
+							</div>
                         
                         </div>
                         
@@ -433,7 +435,8 @@ thẻ đường dẫn tuyệt đối
                                 echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
                             echo '</h3>';
                             echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
-                        echo '</div></div></div>';
+							
+						echo '</div></div></div>';
 				
 					}
 				
