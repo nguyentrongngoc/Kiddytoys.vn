@@ -377,7 +377,7 @@ thẻ đường dẫn tuyệt đối
     <div class="row five-cols-products" id="products-group">  
              
             <?php
-					$per_page = 12;
+					$per_page = 5;
 					mysql_connect("localhost","root","");
 					mysql_select_db("kiddytoys");
 					//count product
