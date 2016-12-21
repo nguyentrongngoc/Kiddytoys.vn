@@ -547,7 +547,12 @@ thẻ đường dẫn tuyệt đối
                                 echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
                             echo '</h3>';
                             echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
-                        echo '</div></div></div>';
+                        echo '<div class="clearfix">';
+					//chi tiet san pham -->
+					echo '<form action="product.php" method="GET"><button type="submit" class="btn btn-success" name="product" value='.$row["Idproduce"].'>Chi tiết</button></form>';
+					//them san pham vao gio hang -->
+					echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+                echo '</div></div></div></div>';
 				
 					}
 				//count number of page

@@ -550,7 +550,7 @@ thẻ đường dẫn tuyệt đối
 					//chi tiet san pham -->
 					echo '<form action="product.php" method="GET"><button type="submit" class="btn btn-success" name="product" value='.$row["Idproduce"].'>Chi tiết</button></form>';
 					//them san pham vao gio hang -->
-					echo '<form><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+					echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
                 echo '</div></div></div></div>';
 				
 					}
