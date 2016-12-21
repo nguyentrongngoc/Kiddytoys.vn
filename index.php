@@ -133,7 +133,7 @@ thẻ đường dẫn tuyệt đối
                     </li>
                     <li>
                         <div class="h_usercontrol">
-						<form action="cart.php" method="get">
+						<form action="cart.php" method="post">
                             <button type="submit" onclick="javascript:view_cart()">
                                 <i class="fa fa-shopping-cart icon"></i>
                                 <span class="total-items">0</span>
@@ -542,7 +542,7 @@ thẻ đường dẫn tuyệt đối
 					//chi tiet san pham -->
 					echo '<form action="product.php" method="GET"><button type="submit" class="btn btn-success" name="product" value='.$row["Idproduce"].'>Chi tiết</button></form>';
 					//them san pham vao gio hang -->
-					echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+					echo '<form action="cart_update.php" method="post"><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
                 echo '</div></div></div></div>';
 				
 					}
@@ -723,7 +723,8 @@ $('.testimonials-grid').slick({
                         <input type="hidden" name="checkin" value="promotion" />
                         <button type="submit" class="btn">Nhận</button>
                     </div>
-                </form>
+                </
+				>
             </div>
                 <!-- -->
             
