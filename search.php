@@ -95,7 +95,7 @@ thẻ đường dẫn tuyệt đối
             <div class="col-xs-12 col-sm-9 header-group-box hidden-xs">                
                 <div class="form-search hidden-xs">
                     <form action="search.php" key="get">
-                        <input type="text" name="keyword" placeholder="Bạn đang cần tìm..."/>
+                        <input type="text" name="keyword" value ="keyword" placeholder="Bạn đang cần tìm..."/>
                         <button type="submit">
                             <i class="fa fa-search"></i>
                         </button>
@@ -158,8 +158,6 @@ thẻ đường dẫn tuyệt đối
 </div>
 
 
-    <!-- -->
-
 
 <div class="visible-xs clearfix" id="visiable-xsnav">
     <div class="col-xs-4">
@@ -184,7 +182,7 @@ thẻ đường dẫn tuyệt đối
     <!--                 2 FORM TÌM KIẾM VÌ TRONG DIV hiển thị cho di động-->  
     <form action="san-pham/search.php" method="get">
         <div>
-            <input type="text" name="keyword" value="keyword" placeholder="Bạn đang cần tìm..."/>
+            <input type="text" name="keyword" value="<?php echo $keyword; ?>" placeholder="Bạn đang cần tìm..."/>
             <button type="submit">
                 <i class="glyphicon glyphicon-search"></i>
             </button>
@@ -200,7 +198,10 @@ thẻ đường dẫn tuyệt đối
                 <li  class="">
                     <a href="index.php" class="" >TRANG CHỦ </a>
                 </li>
-
+                 <!-- List-->
+                <li  class="">
+                    <a href="productlist.php" class="" >Tất Cả </a>
+                </li>
                     <!-- BÉ TRAI-->
                 <li  class="">
                     <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
@@ -255,7 +256,6 @@ thẻ đường dẫn tuyệt đối
                             -->
                         </li>
                         <li ><a href="search.php?keyword=">Đồ Dùng Nhà Bếp</a></li>
-                        <li ><a href="search.php?keyword=">Khéo Tay Hay Làm</a></li>
                         <li ><a href="search.php?keyword=dochoitheophim ">Đồ Chơi Theo Phim</a></li>
                     </ul>         
                 </li>
@@ -305,10 +305,7 @@ thẻ đường dẫn tuyệt đối
                
     </body>
 </div>
-                <!-- Sao cmt vào json dc, json ở trên hiển thị di động thì phải. Từ từ có ảnh, có banner thì sửa code thử-->
 
-    
-  
 
 <div class="container">
     
@@ -317,12 +314,12 @@ thẻ đường dẫn tuyệt đối
 <a name="home_scrollproduct" id="home_scrollproduct"></a>
 
     <h2 class="clearfix title-lg border f-title">
-        <span>Tất Cả Sản Phẩm Bạn Tìm</span>
+        <span>Sản Phẩm Bạn Tìm</span>
     </h2>
     <div class="row five-cols-products" id="products-group">  
              
             <?php
-                    $per_page = 20;
+                    $per_page = 30;
                     $key = $_GET["keyword"];
                     $conn = mysqli_connect('localhost', 'root', '', 'kiddytoys');
                     //count product
@@ -347,11 +344,11 @@ thẻ đường dẫn tuyệt đối
                             echo '<div class="p-item" itemscope >';
                                 echo '<figure class="p-img">';
                                     echo '<a href="product.php?product='.$row["Idproduce"].'" itemprop="url">';
-                                        echo '<img src="'.$row["imglink"].'" alt="Xe điều khiển cyklon" title="Xe điều khiển cyklon" class="img-responsive" itemprop="image" >';
+                                        echo '<img src="'.$row["imglink"].'" alt="img" title="kiddytoys" class="img-responsive" itemprop="image" >';
                                     echo '</a>';
                                 echo '</figure>';
                         echo '<div class="clearfix p-caption">';
-                            echo '<h3 title="Xe điều khiển cyklon" class="p-title">';
+                            echo '<h3 title="kiddytoys" class="p-title">';
                                 echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
                             echo '</h3>';
                             echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
@@ -362,18 +359,18 @@ thẻ đường dẫn tuyệt đối
                 
                     }
                 //count number of page
-                $a = ceil($cou/$per_page); //a is number of page
+                // $a = ceil($cou/$per_page); //a is number of page
                 ?>
         </div>
-                    <div class="row">
+<!--                     <div class="row">
                         <ul class="pagination alg-right-pad">
                             <?php
                                 for($b = 1; $b <= $a; $b++){
-                                ?><li><a href="search.php?keyword=$keywordpage=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php 
+                                ?><li><a href="search.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php 
                             }
                             ?>
                         </ul>
-                    </div>
+                    </div>  -->
         
 </div>
 

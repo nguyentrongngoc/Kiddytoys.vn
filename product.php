@@ -87,8 +87,8 @@ thẻ đường dẫn tuyệt đối
             <!-- -->
             <div class="col-xs-12 col-sm-9 header-group-box hidden-xs">                
                 <div class="form-search hidden-xs">
-                    <form action="search.html" method="get">
-                        <input type="text" name="q" value="keyword" placeholder="Bạn đang cần tìm..."/>
+                    <form action="search.php" method="get">
+                        <input type="text" name="keyword" value="keyword" placeholder="Bạn đang cần tìm..."/>
                         <button type="submit">
                             <i class="fa fa-search"></i>
                         </button>
@@ -185,7 +185,7 @@ thẻ đường dẫn tuyệt đối
     <!--                 2 FORM TÌM KIẾM VÌ TRONG DIV hiển thị cho di động-->  
     <form action="san-pham/search.php" method="get">
         <div>
-            <input type="text" name="q" value="" placeholder="Bạn đang cần tìm..."/>
+            <input type="text" name="q" value="keyword" placeholder="Bạn đang cần tìm..."/>
             <button type="submit">
                 <i class="glyphicon glyphicon-search"></i>
             </button>
@@ -201,7 +201,10 @@ thẻ đường dẫn tuyệt đối
                 <li  class="">
                     <a href="index.php" class="" >TRANG CHỦ </a>
                 </li>
-
+                    <!-- List-->
+                <li  class="">
+                    <a href="productlist.php" class="" >Tất Cả </a>
+                </li>
                     <!-- BÉ TRAI-->
                 <li  class="">
                     <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
@@ -256,7 +259,6 @@ thẻ đường dẫn tuyệt đối
                             -->
                         </li>
                         <li ><a href="search.php?keyword=">Đồ Dùng Nhà Bếp</a></li>
-                        <li ><a href="search.php?keyword=">Khéo Tay Hay Làm</a></li>
                         <li ><a href="search.php?keyword=dochoitheophim ">Đồ Chơi Theo Phim</a></li>
                     </ul>         
                 </li>
@@ -306,64 +308,6 @@ thẻ đường dẫn tuyệt đối
                
     </body>
 </div>
-                <!-- Sao cmt vào json dc, json ở trên hiển thị di động thì phải. Từ từ có ảnh, có banner thì sửa code thử-->
-
-                <!-- BANNER QUẢNG CÁO--> <!-- tạo banner nhớ chỉnh lại 1349x485-->
-	<!--
-	<div id="slick" class="slick home-slider clearfix hidden-xs">
-    
-        <div class="slider">
-            <div class="slide">
-                <a href="khuyenmai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="khuyenmai.html">
-                    <img src="uploads/slide/banner33.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="http://Kiddytoys.vn/khuyenmai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="betrai.html">
-                    <img src="uploads/slide/banner33.jpg" alt="Bé Trai" title="Bé Trai" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="begai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Bé Gái" title="Bé Gái" />
-                </a>
-            </div>
-        </div>
-        
-    </div>
-	-->
-                <!-- END BANNER QUẢNG CÁO-->
-                <!-- Scrip lướt banner-->
-
-    <script>
-    $(function() {
-        $('#slick .slider').slick({
-          dots: true,
-          infinite: true,
-          speed: 800,
-          slidesToShow: 1,
-          adaptiveHeight: true,
-          fade: true,
-          cssEase: 'linear',
-          autoplay: true,
-          autoplaySpeed: 4000,
-          pauseOnHover: true,
-          arrows: false
-      });
-    });
-    
-    </script>
-    
   
 
 <div class="container">
@@ -372,8 +316,6 @@ thẻ đường dẫn tuyệt đối
     
         
 </div>
-
-
 
 <a name="home_scrollproduct" id="home_scrollproduct"></a>
     <div class="clearfix">
@@ -399,10 +341,11 @@ thẻ đường dẫn tuyệt đối
                             </div>
                             <div class="col-xs-4  p-list">
                             <?php	
-								echo '<h2 style="color: blue">Tên sản phẩm:	'.$row["productname"].'</h2>'; 
+								echo '<h2>'.$row["productname"].'</h2>'; 
 								// echo '<h4>Loại sản phẩm:<span style="color: red">'.$row["category"].'</span></h4>';
 								echo '<h4 class="p-price" itemprop="price">Giá: <s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice" style="color: red">'.$row["price"].'&nbsp;<u>đ</u></b></h4	>'; 
 								echo '<h4>Mô tả:<span style="color: red"></span></h4>';
+                                echo '<br>';
 								echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-info btn-lg" onclick="addProductToCart()" name="product" value='.$row["Idproduce"].'>Đặt mua</button></form>';
 							?>
 
@@ -443,7 +386,7 @@ thẻ đường dẫn tuyệt đối
 				?>
 								</div>
                             </div>
-                                <!-- -->                             
+                                                     
                         </div>    
                     </div>
                 </div>

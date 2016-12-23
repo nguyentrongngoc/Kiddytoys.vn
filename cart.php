@@ -198,7 +198,10 @@ thẻ đường dẫn tuyệt đối
                 <li  class="">
                     <a href="index.php" class="" >TRANG CHỦ </a>
                 </li>
-
+                    <!-- List-->
+                <li  class="">
+                    <a href="productlist.php" class="" >Tất Cả </a>
+                </li>
                     <!-- BÉ TRAI-->
                 <li  class="">
                     <a href="betrai.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
@@ -253,7 +256,6 @@ thẻ đường dẫn tuyệt đối
                             -->
                         </li>
                         <li ><a href="begai/dodungnhabep.html">Đồ Dùng Nhà Bếp</a></li>
-                        <li ><a href="begai/kheotayhaylam.html">Khéo Tay Hay Làm</a></li>
                         <li ><a href="begai/dochoitheophim.html">Đồ Chơi Theo Phim</a></li>
                     </ul>         
                 </li>
@@ -303,66 +305,7 @@ thẻ đường dẫn tuyệt đối
                
     </body>
 </div>
-                <!-- Sao cmt vào json dc, json ở trên hiển thị di động thì phải. Từ từ có ảnh, có banner thì sửa code thử-->
-
-                <!-- BANNER QUẢNG CÁO--> <!-- tạo banner nhớ chỉnh lại 1349x485-->
-	<!--
-	<div id="slick" class="slick home-slider clearfix hidden-xs">
-    
-        <div class="slider">
-            <div class="slide">
-                <a href="khuyenmai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="khuyenmai.html">
-                    <img src="uploads/slide/banner33.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="http://Kiddytoys.vn/khuyenmai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="betrai.html">
-                    <img src="uploads/slide/banner33.jpg" alt="Bé Trai" title="Bé Trai" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="begai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Bé Gái" title="Bé Gái" />
-                </a>
-            </div>
-        </div>
-        
-    </div>
-	-->
-                <!-- END BANNER QUẢNG CÁO-->
-                <!-- Scrip lướt banner-->
-
-<!--     <script>
-    $(function() {
-        $('#slick .slider').slick({
-          dots: true,
-          infinite: true,
-          speed: 800,
-          slidesToShow: 1,
-          adaptiveHeight: true,
-          fade: true,
-          cssEase: 'linear',
-          autoplay: true,
-          autoplaySpeed: 4000,
-          pauseOnHover: true,
-          arrows: false
-      });
-    });
-    
-    </script> -->
-    
-  
-
+              
 <div class="container">
     
 <div class="clearfix hidden-xs">

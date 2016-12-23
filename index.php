@@ -144,7 +144,6 @@ thẻ đường dẫn tuyệt đối
 						</form>
                         </div>
                     </li>
-                        <!-- -->
                 </ul>                
             </div>                
         
@@ -180,7 +179,7 @@ thẻ đường dẫn tuyệt đối
     <!--                 2 FORM TÌM KIẾM VÌ TRONG DIV hiển thị cho di động-->  
     <form action="san-pham/search.php" method="get">
         <div>
-            <input type="text" name="keyword" value="" placeholder="Bạn đang cần tìm..."/>
+            <input type="text" name="keyword" value="<?php echo $keyword; ?>" placeholder="Bạn đang cần tìm..."/>
             <button type="submit">
                 <i class="glyphicon glyphicon-search"></i>
             </button>
@@ -196,7 +195,10 @@ thẻ đường dẫn tuyệt đối
                 <li  class="">
                     <a href="index.php" class="" >TRANG CHỦ </a>
                 </li>
-
+                    <!-- List-->
+                <li  class="">
+                    <a href="productlist.php" class="" >Tất Cả </a>
+                </li>
                     <!-- BÉ TRAI-->
                 <li  class="">
                     <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
@@ -251,7 +253,6 @@ thẻ đường dẫn tuyệt đối
                             -->
                         </li>
                         <li ><a href="search.php?keyword=">Đồ Dùng Nhà Bếp</a></li>
-                        <li ><a href="search.php?keyword=">Khéo Tay Hay Làm</a></li>
                         <li ><a href="search.php?keyword=dochoitheophim ">Đồ Chơi Theo Phim</a></li>
                     </ul>         
                 </li>
