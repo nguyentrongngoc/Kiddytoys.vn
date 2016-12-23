@@ -22,6 +22,7 @@ thẻ đường dẫn tuyệt đối
 <meta property="og:title" content="Thiên Đường Đồ Chơi Trẻ Em" />
 <meta property="og:description" content="Kiddytoys là trang thương mại điện tử chuyên bán các mặt hàng đồ chơi trẻ em, đa mẫu mã, chủng loại." />
 <meta itemprop="priceCurrency" content="VNĐ" />
+<meta charset="utf-8">
 <meta content="index, follow" name="robots">
 <!--CSS -->
 <link href="assets/front/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -33,9 +34,7 @@ thẻ đường dẫn tuyệt đối
 <link href="assets/front/css/fakeLoader.css" rel="stylesheet" type="text/css" />
 <link href="assets/front/css/layout-home.css" rel="stylesheet" type="text/css" />
 <link href="assets/front/css/responsive.css" rel="stylesheet" type="text/css" />
-<script language="javascript">
-    var site_url = 'http://Kiddytoys.vn/';
-</script>
+<script language="javascript">var site_url = 'http://Kiddytoys.vn/';</script>
 <script type="text/javascript" src="assets/front/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="assets/front/js/fakeLoader.min.js"></script>
 <script type="text/javascript" src="assets/front/js/bootstrap.min.js"></script>
@@ -88,7 +87,7 @@ thẻ đường dẫn tuyệt đối
             <div class="col-xs-12 col-sm-9 header-group-box hidden-xs">                
                 <div class="form-search hidden-xs">
                     <form action="search.php" method="get">
-                        <input type="text" name="keyword" value="keyword" placeholder="Bạn đang cần tìm..."/>
+                        <input type="text" name="keyword" value="" placeholder="Bạn đang cần tìm..."/>
                         <button type="submit">
                             <i class="fa fa-search"></i>
                         </button>

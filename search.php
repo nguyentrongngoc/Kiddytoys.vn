@@ -33,9 +33,7 @@ thẻ đường dẫn tuyệt đối
 <link href="assets/front/css/fakeLoader.css" rel="stylesheet" type="text/css" />
 <link href="assets/front/css/layout-home.css" rel="stylesheet" type="text/css" />
 <link href="assets/front/css/responsive.css" rel="stylesheet" type="text/css" />
-<script language="javascript">
-    var site_url = 'http://Kiddytoys.vn/';
-</script>
+<script language="javascript">var site_url = 'http://Kiddytoys.vn/';</script>
 <script type="text/javascript" src="assets/front/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="assets/front/js/fakeLoader.min.js"></script>
 <script type="text/javascript" src="assets/front/js/bootstrap.min.js"></script>
@@ -95,7 +93,7 @@ thẻ đường dẫn tuyệt đối
             <div class="col-xs-12 col-sm-9 header-group-box hidden-xs">                
                 <div class="form-search hidden-xs">
                     <form action="search.php" key="get">
-                        <input type="text" name="keyword" value ="keyword" placeholder="Bạn đang cần tìm..."/>
+                        <input type="text" name="keyword" value ="" placeholder="Bạn đang cần tìm..."/>
                         <button type="submit">
                             <i class="fa fa-search"></i>
                         </button>
@@ -366,7 +364,7 @@ thẻ đường dẫn tuyệt đối
                         <ul class="pagination alg-right-pad">
                             <?php
                                 for($b = 1; $b <= $a; $b++){
-                                ?><li><a href="search.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php 
+                                ?><li><a href="search.php?page="> <?php echo $b." "; ?></a><?php 
                             }
                             ?>
                         </ul>
