@@ -11,6 +11,8 @@ thẻ đường dẫn tuyệt đối
 <base href="http://Kiddytoys.vn/" />
  -->
 <link rel="icon" href="assets/front/img/icon.png" type="image/x-icon" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Thiên Đường Đồ Chơi Trẻ Em</title>
 <meta name="description" content="Kiddytoys là trang thương mại điện tử chuyên bán các mặt hàng đồ chơi trẻ em, đa mẫu mã, chủng loại." />
@@ -61,11 +63,6 @@ thẻ đường dẫn tuyệt đối
                             <i class="glyphicon glyphicon-bed"></i>
                             <a target="_blank" href="mua-sam-online/giao-hang-va-nhan-hang/">Giao Hàng Nhanh</a>
                         </li>
-                        <!-- -->
-                        <li class="hidden-xs">
-                            <i class="glyphicon glyphicon-edit"></i>
-                                <a target="_blank" href="mua-sam-online/ca-nhan-hoa-truc-tuyen/">Cá Nhân Hoá Trực Tuyến</a>
-                        </li>
                             <!-- -->
                         <li class="hidden-xs">
                             <i class="glyphicon glyphicon-refresh"></i>
@@ -75,7 +72,6 @@ thẻ đường dẫn tuyệt đối
                     </ul>
                     
                         <!-- -->
-            
             
                 </div>
             </div>
@@ -543,7 +539,7 @@ thẻ đường dẫn tuyệt đối
                             echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
 					echo '<div class="clearfix">';
 					
-					echo '<form action="cart_update.php" method="post"><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+					echo '<form action="cart_update.php" method="post"><button type="submit" class="btn btn-info" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
                 echo '</div></div></div></div>';
 				
 					}
@@ -555,7 +551,7 @@ thẻ đường dẫn tuyệt đối
 						<ul class="pagination alg-right-pad">
 							<?php
 								for($b = 1; $b <= $a; $b++){
-								?><li><a href="index.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php	
+								?><li><a href="productlist.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php	
 							}
 							?>
 						</ul>
@@ -597,7 +593,7 @@ thẻ đường dẫn tuyệt đối
                     </div>
                 </div>
                 <div class="quote">
-                    Web chuyên nghiệp, Tư vấn nhiệt tình, giao hàng quá nhanh. Sản phẩm in đẹp, chất liệu xịn. 
+                    Web chuyên nghiệp, Tư vấn nhiệt tình, giao hàng quá nhanh.. 
 Quá tuyệt !             </div>
                             </div>
                                     <div class="col-sm-3 col-xs-12 item">

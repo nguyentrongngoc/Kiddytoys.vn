@@ -11,6 +11,8 @@ thẻ đường dẫn tuyệt đối
 <base href="http://Kiddytoys.vn/" />
  -->
 <link rel="icon" href="assets/front/img/icon.png" type="image/x-icon" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Thiên Đường Đồ Chơi Trẻ Em</title>
 <meta name="description" content="Kiddytoys là trang thương mại điện tử chuyên bán các mặt hàng đồ chơi trẻ em, đa mẫu mã, chủng loại." />
@@ -88,8 +90,8 @@ thẻ đường dẫn tuyệt đối
             <!-- -->
             <div class="col-xs-12 col-sm-9 header-group-box hidden-xs">                
                 <div class="form-search hidden-xs">
-                    <form action="search.html" method="get">
-                        <input type="text" name="q" value="keyword" placeholder="Bạn đang cần tìm..."/>
+                    <form action="search.php" method="get">
+                        <input type="text" name="keyword" placeholder="Bạn đang cần tìm..."/>
                         <button type="submit">
                             <i class="fa fa-search"></i>
                         </button>
@@ -111,8 +113,12 @@ thẻ đường dẫn tuyệt đối
                 <?php
                        
                         if (isset($_SESSION['email'])){
+							if($_SESSION['email'] == 'admin@gmail.com'){
+								echo "<li><a href='admin/web/index.php'>Admin</a></li>";
+							}
                             echo "<li><a href='#'>Hi, ".$_SESSION['email']."</a></li>";
                             echo "<li><a href='logout.php'>Log out</a></li>";
+							
                     }else{
                         echo "<li><a href='login.html'>Đăng nhập</a></li><li><a href='register.html'>Đăng kí</a></li>";
                     }
@@ -125,25 +131,17 @@ thẻ đường dẫn tuyệt đối
                             </div>
                         </div>                
                     </li>
-                        <!-- -->
-                     <li> 
-                        <div class="h_usercontrol">
-                            <button type="button">
-                                <i class="fa fa-bell icon"></i>
-                            </button>
-                        </div>
-                    </li>
                     <li>
                         <div class="h_usercontrol">
-                            <button type="button" onclick="javascript:view_cart()">
+						<form action="view_cart.html">
+                            <button type="submit" onclick="javascript:view_cart()">
                                 <i class="fa fa-shopping-cart icon"></i>
                                 <span class="total-items">0</span>
-                                
                                 <span>
                                     <b>Giỏ hàng</b> 
                                 </span>
-                                
                             </button>
+						</form>
                         </div>
                     </li>
                         <!-- -->
@@ -182,7 +180,7 @@ thẻ đường dẫn tuyệt đối
     <!--                 2 FORM TÌM KIẾM VÌ TRONG DIV hiển thị cho di động-->  
     <form action="san-pham/search.php" method="get">
         <div>
-            <input type="text" name="q" value="" placeholder="Bạn đang cần tìm..."/>
+            <input type="text" name="keyword" value="" placeholder="Bạn đang cần tìm..."/>
             <button type="submit">
                 <i class="glyphicon glyphicon-search"></i>
             </button>
@@ -201,10 +199,10 @@ thẻ đường dẫn tuyệt đối
 
                     <!-- BÉ TRAI-->
                 <li  class="">
-                    <a href="betrai.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
+                    <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
                     <ul class="dropdown-menu  level-1">
                         <li>
-                            <a href="betrai/robot.html"  ">RoBot</a>
+                            <a href="search.php?keyword=robot">RoBot</a>
                             <!--    <ul class="dropdown-menu sub-menu level-2">
                                     <li ><a href="betrai/robot/sieuanhhung.html">Siêu Anh Hùng</a></li>
                                     <li ><a href="betrai/robot/robotbienhinh.html">RoBot Biến Hình</a></li>
@@ -213,7 +211,7 @@ thẻ đường dẫn tuyệt đối
                             -->
                         </li>
                         <li>
-                            <a href="betrai/dochoivandong.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">Đồ Chơi Vận Động </a>
+                            <a href="search.php?keyword=vandong" class="parent dropdown-toggle disabled" data-toggle="dropdown">Đồ Chơi Vận Động </a>
                             <!--    <ul class="dropdown-menu sub-menu level-2">
                                     <li ><a href="betrai/dochoivandong/xedap.html">Xe Đạp</a></li>
                                     <li ><a href="betrai/dochoivandong/xetruot.html">Xe Trượt</a></li>
@@ -221,19 +219,19 @@ thẻ đường dẫn tuyệt đối
                                 </ul>
                             -->
                         </li>
-                        <li ><a href="betrai/game.html">Game</a></li>
-                        <li ><a href="betrai/dochoitritue.html">Đồ Chơi Trí Tuệ</a></li>
-                        <li ><a href="betrai/dochoitheophim.html">Đồ Chơi Theo Phim</a></li>
+                        <li ><a href="search.php?keyword=game">Game</a></li>
+                        <li ><a href="search.php?keyword=dochoitritue">Đồ Chơi Trí Tuệ</a></li>
+                        <li ><a href="search.php?keyword=dochoitheophim">Đồ Chơi Theo Phim</a></li>
                     </ul> 
                 </li>
                     <!--END BÉ TRAI-->
                                 
                     <!-- BÉ GÁI-->
                 <li  class="active">
-                    <a href="begai.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ GÁI</a><i class="fa fa-caret-down"></i>
+                    <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ GÁI</a><i class="fa fa-caret-down"></i>
                     <ul class="dropdown-menu  level-1">
                         <li>
-                            <a href="begai/bupbe.html" class="parent dropdown-toggle disabled"data-toggle="dropdown">Búp Bê</a>
+                            <a href="search.php?keyword=bupbe" class="parent dropdown-toggle disabled"data-toggle="dropdown">Búp Bê</a>
                             <!--
                             <a href="begai/bupbe.html" class="parent dropdown-toggle disabled"data-toggle="dropdown">Búp Bê<i class="fa fa-caret-right"></i></a>
                                 <ul class="dropdown-menu sub-menu level-2">
@@ -243,7 +241,7 @@ thẻ đường dẫn tuyệt đối
                             --> 
                         </li>
                         <li>
-                            <a href="begai/lamdieuchobe.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">Làm Điệu Cho Bé</a>
+                            <a href="search.php?keyword=" class="parent dropdown-toggle disabled" data-toggle="dropdown">Làm Điệu Cho Bé</a>
                             <!--
                                 <ul class="dropdown-menu sub-menu level-2">
                                     <li ><a href="begai/lamdieuchobe/vivatuixach.html">Ví và Túi Xách</a></li>
@@ -252,9 +250,9 @@ thẻ đường dẫn tuyệt đối
                                 </ul>
                             -->
                         </li>
-                        <li ><a href="begai/dodungnhabep.html">Đồ Dùng Nhà Bếp</a></li>
-                        <li ><a href="begai/kheotayhaylam.html">Khéo Tay Hay Làm</a></li>
-                        <li ><a href="begai/dochoitheophim.html">Đồ Chơi Theo Phim</a></li>
+                        <li ><a href="search.php?keyword=">Đồ Dùng Nhà Bếp</a></li>
+                        <li ><a href="search.php?keyword=">Khéo Tay Hay Làm</a></li>
+                        <li ><a href="search.php?keyword=dochoitheophim ">Đồ Chơi Theo Phim</a></li>
                     </ul>         
                 </li>
                     <!-- END BÉ GÁI-->
@@ -304,169 +302,77 @@ thẻ đường dẫn tuyệt đối
     </body>
 </div>
                 <!-- Sao cmt vào json dc, json ở trên hiển thị di động thì phải. Từ từ có ảnh, có banner thì sửa code thử-->
-
-                <!-- BANNER QUẢNG CÁO--> <!-- tạo banner nhớ chỉnh lại 1349x485-->
-	<!--
-	<div id="slick" class="slick home-slider clearfix hidden-xs">
-    
-        <div class="slider">
-            <div class="slide">
-                <a href="khuyenmai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="khuyenmai.html">
-                    <img src="uploads/slide/banner33.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="http://Kiddytoys.vn/khuyenmai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="betrai.html">
-                    <img src="uploads/slide/banner33.jpg" alt="Bé Trai" title="Bé Trai" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="begai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Bé Gái" title="Bé Gái" />
-                </a>
-            </div>
-        </div>
-        
-    </div>
-	-->
-                <!-- END BANNER QUẢNG CÁO-->
-                <!-- Scrip lướt banner-->
-
-<!--     <script>
-    $(function() {
-        $('#slick .slider').slick({
-          dots: true,
-          infinite: true,
-          speed: 800,
-          slidesToShow: 1,
-          adaptiveHeight: true,
-          fade: true,
-          cssEase: 'linear',
-          autoplay: true,
-          autoplaySpeed: 4000,
-          pauseOnHover: true,
-          arrows: false
-      });
-    });
-    
-    </script> -->
     
   
 
 <div class="container">
     
 <div class="clearfix hidden-xs">
-    
-        
-</div>
-
-
 
 <a name="home_scrollproduct" id="home_scrollproduct"></a>
     <div class="clearfix">
-        <h1 class="clearfix title-lg border f-title">
-            <span>THÔNG TIN SẢN PHẨM</span>
-        </h1>
-       
-	   <?php
-    if(isset($_SESSION["products"]))
-    {
-        $total = 0;
-        echo '<form method="post" action="PAYMENT-GATEWAY">';
-        echo '<ul>';
-        $cart_items = 0;
-        foreach ($_SESSION["products"] as $cart_itm)
-        {
-           $product_code = $cart_itm["code"];
-           $results = $mysqli->query("SELECT product_name,product_desc, price FROM products WHERE product_code='$product_code' LIMIT 1");
-           $obj = $results->fetch_object();
-            
-            echo '<li class="cart-itm">';
-            echo '<span class="remove-itm"><a href="cart_update.php?removep='.$cart_itm["code"].'&return_url='.$current_url.'">&times;</a></span>';
-            echo '<div class="p-price">'.$currency.$obj->price.'</div>';
-            echo '<div class="product-info">';
-            echo '<h3>'.$obj->product_name.' (Code :'.$product_code.')</h3> ';
-            echo '<div class="p-qty">Qty : '.$cart_itm["qty"].'</div>';
-            echo '<div>'.$obj->product_desc.'</div>';
-            echo '</div>';
-            echo '</li>';
-            $subtotal = ($cart_itm["price"]*$cart_itm["qty"]);
-            $total = ($total + $subtotal);
- 
-            echo '<input type="hidden" name="item_name['.$cart_items.']" value="'.$obj->product_name.'" />';
-            echo '<input type="hidden" name="item_code['.$cart_items.']" value="'.$product_code.'" />';
-            echo '<input type="hidden" name="item_desc['.$cart_items.']" value="'.$obj->product_desc.'" />';
-            echo '<input type="hidden" name="item_qty['.$cart_items.']" value="'.$cart_itm["qty"].'" />';
-            $cart_items ++;
-            
-        }
-        echo '</ul>';
-        echo '<span class="check-out-txt">';
-        echo '<strong>Total : '.$currency.$total.'</strong>  ';
-        echo '</span>';
-        echo '</form>';
+
+    <h2 class="clearfix title-lg border f-title">
+        <span>Tất Cả Sản Phẩm</span>
+    </h2>
+    <div class="row five-cols-products" id="products-group">  
+             
+            <?php
+					$per_page = 20;
+					$conn = mysqli_connect('localhost', 'root', '', 'kiddytoys');
+					//count product
+					$res_cou = mysqli_query($conn,"SELECT Idproduce from product");
+					$cou = mysqli_num_rows($res_cou);
+					if(isset($_GET["page"]))
+						$page = $_GET["page"];
+					else $page = 0;
+					if($page=="" || $page < "1"|| $page=="1"){
+						$page_num = 0;
+					}
+					else if($page > ceil($cou/$per_page)){
+						$page_num =  ceil($cou/$per_page);
+					}
+					else{
+						$page_num = ($page*$per_page) -	$per_page;
+					}
+					$res=mysqli_query($conn, "SELECT productname, price,category,imglink, Idproduce	 FROM product limit $page_num, $per_page");
+					while($row=mysqli_fetch_array($res)){
+						echo '<div class="item">';
+							echo '<div class="p-item" itemscope >';
+								echo '<figure class="p-img">';
+									echo '<a href="product.php?product='.$row["Idproduce"].'" itemprop="url">';
+										echo '<img src="'.$row["imglink"].'" alt="Xe điều khiển cyklon" title="Xe điều khiển cyklon" class="img-responsive" itemprop="image" >';
+                                    echo '</a>';
+								echo '</figure>';
+                        echo '<div class="clearfix p-caption">';
+                            echo '<h3 title="Xe điều khiển cyklon" class="p-title">';
+                                echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
+                            echo '</h3>';
+                            echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
+					echo '<div class="clearfix">';
+					
+					echo '<form action="cart_update.php" method="post"><button type="submit" class="btn btn-info" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+                echo '</div></div></div></div>';
+				
+					}
+				//count number of page
+				$a = ceil($cou/$per_page); //a is number of page
+				?>
+		</div>
+					<div class="row">
+						<ul class="pagination alg-right-pad">
+							<?php
+								for($b = 1; $b <= $a; $b++){
+								?><li><a href="productlist.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php	
+							}
+							?>
+						</ul>
+					</div>
         
-    }else{
-        echo 'Your Cart is empty';
-    }
-?>
-    </div>
 </div>
-	
-<script>
-$('.five-cols-products').slick({
-  dots: false,
-  navs: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  adaptiveHeight: true,
-  arrows: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        dots: true,
-        arrows: false
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: true,
-        arrows: false
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        dots: true,
-        arrows: false
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
-</script>
+
+
+    </div>
     <!--FOOTER-->
     <footer id="footer" class="clearfix">
         
@@ -499,7 +405,7 @@ $('.five-cols-products').slick({
                     </div>
                 </div>
                 <div class="quote">
-                    Web chuyên nghiệp, Tư vấn nhiệt tình, giao hàng quá nhanh 
+                    Web chuyên nghiệp, Tư vấn nhiệt tình, giao hàng quá nhanh. Sản phẩm in đẹp, chất liệu xịn. 
 Quá tuyệt !             </div>
                             </div>
                                     <div class="col-sm-3 col-xs-12 item">
@@ -580,7 +486,8 @@ $('.testimonials-grid').slick({
                         <input type="hidden" name="checkin" value="promotion" />
                         <button type="submit" class="btn">Nhận</button>
                     </div>
-                </form>
+                </
+				>
             </div>
                 <!-- -->
             
@@ -714,11 +621,12 @@ $('.testimonials-grid').slick({
 <p><span>Văn Phòng: </span>KTX Khu B, Dĩ An, Bình Dương, Việt Nam</span></p>
 
 <p><a href="http://online.gov.vn/HomePage/da-thong-bao" target="_blank" title="Đã Thông Báo Trang TMĐT"><img alt="Đã thông báo với Bộ Công Thương" src="uploads/products/da-thong-bao-bo-cong-thuong.png" /></a></p>    
+   
 </div>
 
         </div>
     </footer>
-
+ 
     
 </body>
 </html>

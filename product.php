@@ -61,11 +61,6 @@ thẻ đường dẫn tuyệt đối
                             <i class="glyphicon glyphicon-bed"></i>
                             <a target="_blank" href="mua-sam-online/giao-hang-va-nhan-hang/">Giao Hàng Nhanh</a>
                         </li>
-                        <!-- -->
-                        <li class="hidden-xs">
-                            <i class="glyphicon glyphicon-edit"></i>
-                                <a target="_blank" href="mua-sam-online/ca-nhan-hoa-truc-tuyen/">Cá Nhân Hoá Trực Tuyến</a>
-                        </li>
                             <!-- -->
                         <li class="hidden-xs">
                             <i class="glyphicon glyphicon-refresh"></i>
@@ -75,8 +70,6 @@ thẻ đường dẫn tuyệt đối
                     </ul>
                     
                         <!-- -->
-            
-            
                 </div>
             </div>
         </div>
@@ -95,7 +88,7 @@ thẻ đường dẫn tuyệt đối
             <div class="col-xs-12 col-sm-9 header-group-box hidden-xs">                
                 <div class="form-search hidden-xs">
                     <form action="search.html" method="get">
-                        <input type="text" name="q" value="" placeholder="Bạn đang cần tìm..."/>
+                        <input type="text" name="q" value="keyword" placeholder="Bạn đang cần tìm..."/>
                         <button type="submit">
                             <i class="fa fa-search"></i>
                         </button>
@@ -407,15 +400,11 @@ thẻ đường dẫn tuyệt đối
                             <div class="col-xs-4  p-list">
                             <?php	
 								echo '<h2 style="color: blue">Tên sản phẩm:	'.$row["productname"].'</h2>'; 
-								echo '<h4>Loại sản phẩm:<span style="color: red">'.$row["category"].'</span></h4>';
+								// echo '<h4>Loại sản phẩm:<span style="color: red">'.$row["category"].'</span></h4>';
 								echo '<h4 class="p-price" itemprop="price">Giá: <s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice" style="color: red">'.$row["price"].'&nbsp;<u>đ</u></b></h4	>'; 
 								echo '<h4>Mô tả:<span style="color: red"></span></h4>';
-								echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-danger" onclick="addProductToCart()" name="product" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+								echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-info btn-lg" onclick="addProductToCart()" name="product" value='.$row["Idproduce"].'>Đặt mua</button></form>';
 							?>
-
-
-            
-
 
 							</div>
                         
@@ -445,7 +434,7 @@ thẻ đường dẫn tuyệt đối
                             echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
 							
 					//them san pham vao gio hang -->
-					echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+					echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-info btn-xs" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
 
 				echo '</div></div></div>';
 				

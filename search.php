@@ -94,7 +94,7 @@ thẻ đường dẫn tuyệt đối
             <!-- -->
             <div class="col-xs-12 col-sm-9 header-group-box hidden-xs">                
                 <div class="form-search hidden-xs">
-                    <form action="search.php" method="get">
+                    <form action="search.php" key="get">
                         <input type="text" name="keyword" placeholder="Bạn đang cần tìm..."/>
                         <button type="submit">
                             <i class="fa fa-search"></i>
@@ -184,7 +184,7 @@ thẻ đường dẫn tuyệt đối
     <!--                 2 FORM TÌM KIẾM VÌ TRONG DIV hiển thị cho di động-->  
     <form action="san-pham/search.php" method="get">
         <div>
-            <input type="text" name="keyword" value="" placeholder="Bạn đang cần tìm..."/>
+            <input type="text" name="keyword" value="keyword" placeholder="Bạn đang cần tìm..."/>
             <button type="submit">
                 <i class="glyphicon glyphicon-search"></i>
             </button>
@@ -307,60 +307,6 @@ thẻ đường dẫn tuyệt đối
 </div>
                 <!-- Sao cmt vào json dc, json ở trên hiển thị di động thì phải. Từ từ có ảnh, có banner thì sửa code thử-->
 
-                <!-- BANNER QUẢNG CÁO--> <!-- tạo banner nhớ chỉnh lại 1349x485-->
-    <div id="slick" class="slick home-slider clearfix hidden-xs">
-    
-        <div class="slider">
-            <div class="slide">
-                <a href="khuyenmai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="khuyenmai.html">
-                    <img src="uploads/slide/banner33.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="http://Kiddytoys.vn/khuyenmai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="betrai.html">
-                    <img src="uploads/slide/banner33.jpg" alt="Bé Trai" title="Bé Trai" />
-                </a>
-            </div>
-            <div class="slide">
-                <a href="begai.html">
-                    <img src="uploads/slide/banner22.jpg" alt="Bé Gái" title="Bé Gái" />
-                </a>
-            </div>
-        </div>
-        
-    </div>
-                <!-- END BANNER QUẢNG CÁO-->
-
-                <!-- Scrip lướt banner-->
-
-    <script>
-    $(function() {
-        $('#slick .slider').slick({
-          dots: true,
-          infinite: true,
-          speed: 800,
-          slidesToShow: 1,
-          adaptiveHeight: true,
-          fade: true,
-          cssEase: 'linear',
-          autoplay: true,
-          autoplaySpeed: 4000,
-          pauseOnHover: true,
-          arrows: false
-      });
-    });
-    
-    </script>
     
   
 
@@ -369,143 +315,9 @@ thẻ đường dẫn tuyệt đối
 <div class="clearfix hidden-xs">
 
 <a name="home_scrollproduct" id="home_scrollproduct"></a>
-    <div class="clearfix">
-        <h1 class="clearfix title-lg border f-title">
-            <span>GỢI Ý CHO BẠN</span>
-        </h1>
-              <!-- POKEMON -->
-        <div class="clearfix row row-mar-20" id="home_productnavcnh">
-        
-                        
-                <div class="col-sm-6 col-xs-12 col-padd-20">
-                
-                    <div class="clearfix" id="home-nav-group">
-                    
-                        <div class="clearfix" id="home-nav-product">
-                            
-                            <div class="col-xs-9 pimg-lg">
-                                <a href="http://Kiddytoys.vn/.....html">
-                                <img src="uploads/products/pokemon-pikachu.jpg" alt="Pokemon - Pikachu" title="Pokemon - Pikachu" class="img-responsive img-lg" />
-                                </a>
-                            </div>
-                            <ul class="col-xs-3  p-list">
-                            
-                                                                
-                                    <li >
-                                        <a href="http://Kiddytoys.vn/.....html">
-                                        <img src="uploads/products/pokemon-meohoatien.jpg" alt="Pokemon - Mèo Hỏa Tiễn " title="Pokemon - Mèo Hỏa Tiễn " class="img-responsive" />
-                                        </a>
-                                    </li>
-                                                                
-                                    <li >
-                                        <a href="http://Kiddytoys.vn/.....html">
-                                        <img src="uploads/products/pokemon-chuotlua.jpg" alt="Pokemon - Chuột Lửa" title="Pokemon - Chuột Lửa" class="img-responsive" />
-                                        </a>
-                                    </li>
-                                                                
-                                    <li class="p-last">
-                                        <a href="http://Kiddytoys.vn/......html">
-                                        <img src="uploads/products/pokemon-galua.jpg" alt="Pokemon - Gà Lửa" title="Pokemon - Gà Lửa" class="img-responsive" />
-                                        </a>
-                                    </li>
-                                                                
-                            </ul>
-                        
-                        </div>
-                        
-                        <div class="clearfix nav-caption row">
-                            <div class="col-md-9 col-xs-12 caption-text">
-                                <h2 class="title">
-                                    <a href="http://Kiddytoys.vn/.....html">Pokemon</a>
-                                </h2>
-                                Thú bông Pokemon đủ mẫu mã, đa dạng cho các bé.                          
-                            </div>
-                                <!-- -->
-                            <ul class="col-sm-3 hidden-xs hidden-sm caption-list">
-                                <li>4 sản phẩm</li>
-                                <li>Từ 60,000&nbsp;<u>đ</u> </li>
-                                <li><a href="http://Kiddytoys.vn/.....html">Xem tất cả</a></li>
-                            </ul>                            
-                            
-                        </div>
-                    
-                    
-                    </div>
-                
-                
-                </div>
-                 <!-- END POKEMON -->
-                    
-                                    
-                 <!--BÚP BÊ -->  
-                <div class="col-sm-6 col-xs-12 col-padd-20">
-                
-                    <div class="clearfix" id="home-nav-group">
-                    
-                        <div class="clearfix" id="home-nav-product">
-                            
-                            <div class="col-xs-9 pimg-lg">
-                                <a href="http://Kiddytoys.vn/.....html">
-                                <img src="uploads/products/bupbe-elsa.jpg" alt="Búp Bê - Elsa" title="Búp Bê - Elsa" class="img-responsive img-lg" />
-                                </a>
-                            </div>
-                            <ul class="col-xs-3  p-list">
-                            
-                                                                
-                                    <li >
-                                        <a href="http://Kiddytoys.vn/.....html">
-                                        <img src="uploads/products/bupbesunset.jpg" alt="Búp Bê - Sunset" title="Búp Bê - Sunset" class="img-responsive" />
-                                        </a>
-                                    </li>
-                                                                
-                                    <li >
-                                        <a href="http://Kiddytoys.vn/.....html">
-                                        <img src="uploads/products/bupbe-nangtienca.jpg" alt="Búp Bê - Nàng Tiên Cá" title="Búp Bê - Nàng Tiên Cá" class="img-responsive" />
-                                        </a>
-                                    </li>
-                                                                
-                                    <li class="p-last">
-                                        <a href="http://Kiddytoys.vn/.....html">
-                                        <img src="uploads/products/bupbe-nangbachtuyet.jpg" alt="Búp Bê - Nàng Bạch Tuyết" title="Búp Bê - Nàng Bạch Tuyết" class="img-responsive" />
-                                        </a>
-                                    </li>
-                                                                
-                            </ul>
-                        
-                        </div>
-                        
-                        <div class="clearfix nav-caption row">
-                            <div class="col-md-9 col-xs-12 caption-text">
-                                <h2 class="title">
-                                    <a href="http://Kiddytoys.vn/....html">Búp Bê</a>
-                                </h2>
-                                Búp Bê đủ mẫu mã, màu sắc, thỏa sức bé yêu lựa chọn.
-                            </div>
-                                <!-- -->
-                            <ul class="col-sm-3 hidden-xs hidden-sm caption-list">
-                                <li>4 sản phẩm</li>
-                                <li>Từ 30,000&nbsp;<u>đ</u> </li>
-                                <li><a href="http://Kiddytoys.vn/.....html">Xem tất cả</a></li>
-                            </ul>                            
-                            
-                        </div>
-                    
-                    
-                    </div>
-                
-                
-                </div>
-        
-                    <!-- END BÚP BÊ-->
-                                   
-               
-        </div>
-    
-    
-    </div>
 
     <h2 class="clearfix title-lg border f-title">
-        <span>Tất Cả Sản Phẩm</span>
+        <span>Tất Cả Sản Phẩm Bạn Tìm</span>
     </h2>
     <div class="row five-cols-products" id="products-group">  
              
@@ -545,7 +357,7 @@ thẻ đường dẫn tuyệt đối
                             echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
                     echo '<div class="clearfix">';
                     
-                    echo '<form action="cart_update.php" method="post"><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+                    echo '<form action="cart_update.php" method="post"><button type="submit" class="btn btn-info" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
                 echo '</div></div></div></div>';
                 
                     }
@@ -557,7 +369,7 @@ thẻ đường dẫn tuyệt đối
                         <ul class="pagination alg-right-pad">
                             <?php
                                 for($b = 1; $b <= $a; $b++){
-                                ?><li><a href="index.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php 
+                                ?><li><a href="search.php?keyword=$keywordpage=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php 
                             }
                             ?>
                         </ul>
@@ -599,7 +411,7 @@ thẻ đường dẫn tuyệt đối
                     </div>
                 </div>
                 <div class="quote">
-                    Web chuyên nghiệp, Tư vấn nhiệt tình, giao hàng quá nhanh. Sản phẩm in đẹp, chất liệu xịn. 
+                    Web chuyên nghiệp, Tư vấn nhiệt tình, giao hàng quá nhanh. 
 Quá tuyệt !             </div>
                             </div>
                                     <div class="col-sm-3 col-xs-12 item">
