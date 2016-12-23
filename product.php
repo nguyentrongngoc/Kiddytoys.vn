@@ -117,8 +117,12 @@ thẻ đường dẫn tuyệt đối
                 <?php
                        
                         if (isset($_SESSION['email'])){
+                            if($_SESSION['email'] == 'admin@gmail.com'){
+                                echo "<li><a href='admin/web/index.php'>Admin</a></li>";
+                            }
                             echo "<li><a href='#'>Hi, ".$_SESSION['email']."</a></li>";
                             echo "<li><a href='logout.php'>Log out</a></li>";
+                            
                     }else{
                         echo "<li><a href='login.html'>Đăng nhập</a></li><li><a href='register.html'>Đăng kí</a></li>";
                     }
@@ -207,10 +211,10 @@ thẻ đường dẫn tuyệt đối
 
                     <!-- BÉ TRAI-->
                 <li  class="">
-                    <a href="betrai.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
+                    <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
                     <ul class="dropdown-menu  level-1">
                         <li>
-                            <a href="betrai/robot.html"  ">RoBot</a>
+                            <a href="search.php?keyword=robot">RoBot</a>
                             <!--    <ul class="dropdown-menu sub-menu level-2">
                                     <li ><a href="betrai/robot/sieuanhhung.html">Siêu Anh Hùng</a></li>
                                     <li ><a href="betrai/robot/robotbienhinh.html">RoBot Biến Hình</a></li>
@@ -219,7 +223,7 @@ thẻ đường dẫn tuyệt đối
                             -->
                         </li>
                         <li>
-                            <a href="betrai/dochoivandong.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">Đồ Chơi Vận Động </a>
+                            <a href="search.php?keyword=vandong" class="parent dropdown-toggle disabled" data-toggle="dropdown">Đồ Chơi Vận Động </a>
                             <!--    <ul class="dropdown-menu sub-menu level-2">
                                     <li ><a href="betrai/dochoivandong/xedap.html">Xe Đạp</a></li>
                                     <li ><a href="betrai/dochoivandong/xetruot.html">Xe Trượt</a></li>
@@ -227,19 +231,19 @@ thẻ đường dẫn tuyệt đối
                                 </ul>
                             -->
                         </li>
-                        <li ><a href="betrai/game.html">Game</a></li>
-                        <li ><a href="betrai/dochoitritue.html">Đồ Chơi Trí Tuệ</a></li>
-                        <li ><a href="betrai/dochoitheophim.html">Đồ Chơi Theo Phim</a></li>
+                        <li ><a href="search.php?keyword=game">Game</a></li>
+                        <li ><a href="search.php?keyword=dochoitritue">Đồ Chơi Trí Tuệ</a></li>
+                        <li ><a href="search.php?keyword=dochoitheophim">Đồ Chơi Theo Phim</a></li>
                     </ul> 
                 </li>
                     <!--END BÉ TRAI-->
                                 
                     <!-- BÉ GÁI-->
                 <li  class="active">
-                    <a href="begai.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ GÁI</a><i class="fa fa-caret-down"></i>
+                    <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ GÁI</a><i class="fa fa-caret-down"></i>
                     <ul class="dropdown-menu  level-1">
                         <li>
-                            <a href="begai/bupbe.html" class="parent dropdown-toggle disabled"data-toggle="dropdown">Búp Bê</a>
+                            <a href="search.php?keyword=bupbe" class="parent dropdown-toggle disabled"data-toggle="dropdown">Búp Bê</a>
                             <!--
                             <a href="begai/bupbe.html" class="parent dropdown-toggle disabled"data-toggle="dropdown">Búp Bê<i class="fa fa-caret-right"></i></a>
                                 <ul class="dropdown-menu sub-menu level-2">
@@ -249,7 +253,7 @@ thẻ đường dẫn tuyệt đối
                             --> 
                         </li>
                         <li>
-                            <a href="begai/lamdieuchobe.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">Làm Điệu Cho Bé</a>
+                            <a href="search.php?keyword=" class="parent dropdown-toggle disabled" data-toggle="dropdown">Làm Điệu Cho Bé</a>
                             <!--
                                 <ul class="dropdown-menu sub-menu level-2">
                                     <li ><a href="begai/lamdieuchobe/vivatuixach.html">Ví và Túi Xách</a></li>
@@ -258,9 +262,9 @@ thẻ đường dẫn tuyệt đối
                                 </ul>
                             -->
                         </li>
-                        <li ><a href="begai/dodungnhabep.html">Đồ Dùng Nhà Bếp</a></li>
-                        <li ><a href="begai/kheotayhaylam.html">Khéo Tay Hay Làm</a></li>
-                        <li ><a href="begai/dochoitheophim.html">Đồ Chơi Theo Phim</a></li>
+                        <li ><a href="search.php?keyword=">Đồ Dùng Nhà Bếp</a></li>
+                        <li ><a href="search.php?keyword=">Khéo Tay Hay Làm</a></li>
+                        <li ><a href="search.php?keyword=dochoitheophim ">Đồ Chơi Theo Phim</a></li>
                     </ul>         
                 </li>
                     <!-- END BÉ GÁI-->
@@ -386,10 +390,9 @@ thẻ đường dẫn tuyệt đối
         <div class="clearfix row row-mar-20" id="home_productnavcnh">
             <?php 
 				$idproduct = $_GET['product'];
-				mysql_connect("localhost","root","");
-				mysql_select_db("kiddytoys");
-				$sql = mysql_query("SELECT Idproduce, productname, price, category, imglink FROM product WHERE Idproduce = '$idproduct'");
-				$row=mysql_fetch_array($sql);
+				$conn = mysqli_connect('localhost', 'root', '', 'kiddytoys');
+				$sql = mysqli_query($conn,"SELECT Idproduce, productname, price, category, imglink FROM product WHERE Idproduce = '$idproduct'");
+				$row=mysqli_fetch_array($sql);
 				$category=$row["category"];
 			?>
 			<div class="col-sm-10 col-xs-12 col-padd-20">
@@ -407,8 +410,13 @@ thẻ đường dẫn tuyệt đối
 								echo '<h4>Loại sản phẩm:<span style="color: red">'.$row["category"].'</span></h4>';
 								echo '<h4 class="p-price" itemprop="price">Giá: <s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice" style="color: red">'.$row["price"].'&nbsp;<u>đ</u></b></h4	>'; 
 								echo '<h4>Mô tả:<span style="color: red"></span></h4>';
-								echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-danger" name="product" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+								echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-danger" onclick="addProductToCart()" name="product" value='.$row["Idproduce"].'>Đặt mua</button></form>';
 							?>
+
+
+            
+
+
 							</div>
                         
                         </div>
@@ -421,12 +429,12 @@ thẻ đường dẫn tuyệt đối
 								<div class="row five-cols-products" id="products-group">
 				<?php
 					
-					$res=mysql_query("SELECT productname, price,category,imglink, Idproduce	 FROM product where category='$category'");
-					while($row=mysql_fetch_array($res)){
+					$res=mysqli_query($conn, "SELECT productname, price,category,imglink, Idproduce	 FROM product where category='$category'");
+					while($row=mysqli_fetch_array($res)){
 						echo '<div class="item">';
 							echo '<div class="p-item" itemscope >';
 								echo '<figure class="p-img">';
-									echo '<a href="#" itemprop="url">';
+									echo '<a href="product.php?product='.$row["Idproduce"].'" itemprop="url">';
 										echo '<img src="'.$row["imglink"].'" class="img-responsive" itemprop="image" >';
                                     echo '</a>';
 								echo '</figure>';
@@ -435,8 +443,7 @@ thẻ đường dẫn tuyệt đối
                                 echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
                             echo '</h3>';
                             echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
-							//chi tiet san pham -->
-					echo '<form action="product.php" method="GET"><button type="submit" class="btn btn-success" name="product" value='.$row["Idproduce"].'>Chi tiết</button></form>';
+							
 					//them san pham vao gio hang -->
 					echo '<form action="cart.php" method="GET"><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
 
@@ -751,7 +758,23 @@ $('.testimonials-grid').slick({
 
         </div>
     </footer>
+ <script>
+        function addProductToCart(sku,name,image_link)
+        {
+          setCookie("product_sku1",sku,30);
+          setCookie("product_name1",name,30);
+          setCookie("product_qty1",1,30);
+          setCookie("product_image_link1",image_link,30);
+        }
 
+        function setCookie(cname, cvalue, exdays) 
+        {
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays*24*60*60*1000));
+          var expires = "expires="+ d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+      </script>
     
 </body>
 </html>

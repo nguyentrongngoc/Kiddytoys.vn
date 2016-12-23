@@ -2,47 +2,52 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Trade Mobile';
+$this->title = 'My Yii Application';
 ?>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Trademobile</title>
+<div class="site-index">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- FontAwsome -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <div class="jumbotron">
+        <h1>Congratulations!</h1>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <p class="lead">You have successfully created your Yii-powered application.</p>
 
-    <style>
-      body {
-        font-family: 'Roboto';
-      }
+        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+    </div>
 
-      #left-sidebar, #main-content {
-        height: 500px;
-        border: 1px solid red;
-        margin-bottom: 50px;
-      }
+    <div class="body-content">
 
-      #footer {        
-        text-align: center;
-      }
-    </style>
-		
-  </head>
-  <body>
-  
-  </body>
-  </html>
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.</p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.</p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.</p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,9 +1,113 @@
-//view_cart.html
-ssssss
-test2
-kho hiu vay u
-test5
-s test6
-may cai test kia đâu @@
-test 7
-test 8
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+      <style>
+        body {
+          font-family: 'Roboto';
+        }
+
+        #left-sidebar, #main-content {
+          height: 500px;
+          border: 1px solid red;
+          margin-bottom: 50px;
+        }
+
+        #footer {        
+          text-align: center;
+        }
+      </style>
+      <script>
+
+
+			$("#divCart").append(result);
+			$("#divCart").append(result);
+			$("#divCart").append(result);
+			$("#divCart").append(result);
+			$("#divCart").append(result);
+			$("#divCart").append(result);
+        };
+
+		function getCookie(cname) {
+		    var name = cname + "=";
+		    var ca = document.cookie.split(';');
+		    for(var i = 0; i <ca.length; i++) {
+		        var c = ca[i];
+		        while (c.charAt(0)==' ') {
+		            c = c.substring(1);
+		        }
+		        if (c.indexOf(name) == 0) {
+		            return c.substring(name.length,c.length);
+		        }
+		    }
+		    return "";
+		}
+</script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed"
+        data-toggle="collapse" data-target="#navbar-collapse"
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ChoDienTu.vn</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+          <!-- <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Sản Phẩm</a></li>
+			<li><a href="#">About Us</a></li>            
+    </ul> -->
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="viewcart.html"><i class="glyphicon glyphicon-shopping-cart"></i> Giỏ Hàng <span class="label label-danger">42</span></a></li>
+      <li><a href="createpost.html"><i class="glyphicon glyphicon glyphicon-user"></i> Đăng Nhập</a></li>
+      <!-- <li><a href="#">Đăng Ký</a></li> -->
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div>
+</nav>
+
+<!-- Place your code at here! -->
+<div id="main">		
+  <div class="container">		
+	<h3><i class="glyphicon glyphicon-shopping-cart"></i> Giỏ hàng của bạn</h3>  
+	<hr>
+	<table id="divCart" class="table table-responsive">
+		<th>SẢN PHẨM</th>
+		<th></th>
+		<th>ĐƠN GIÁ</th>	
+		<th>SỐ LƯỢNG</th>	
+		<th>THÀNH TIỀN</th>		
+	</table>
+	<hr>
+	<h4 class="pull-right">Thành tiền: <span style="color:darkred">4.000.000 đ</span></h4>
+	<span class="clearfix"></span>
+	<button class="btn btn-danger pull-right">Tiến hành thanh toán</button>
+  </div>
+</div> 
+
+
+<!-- Footer -->
+<div id="footer">
+  <div class="container">
+    <p>All rights reserved by Chodientu.vn</p>
+  </div>
+</div>
+
+<!-- DO NOT REMOVE THE 2 LINES -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

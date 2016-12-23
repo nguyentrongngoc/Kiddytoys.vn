@@ -122,14 +122,4 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-	
-	//search
-    public function actionSearch($keyword)
-    {
-        if (($model = product::findOne($keyword)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
 }

@@ -97,7 +97,7 @@ thẻ đường dẫn tuyệt đối
                     <form action="search.php" method="get">
                         <input type="text" name="keyword" placeholder="Bạn đang cần tìm..."/>
                         <button type="submit">
-                            <i class="fa fa-search">Search</i>
+                            <i class="fa fa-search"></i>
                         </button>
                     </form>
             </div>                
@@ -117,8 +117,12 @@ thẻ đường dẫn tuyệt đối
                 <?php
                        
                         if (isset($_SESSION['email'])){
+							if($_SESSION['email'] == 'admin@gmail.com'){
+								echo "<li><a href='admin/web/index.php'>Admin</a></li>";
+							}
                             echo "<li><a href='#'>Hi, ".$_SESSION['email']."</a></li>";
                             echo "<li><a href='logout.php'>Log out</a></li>";
+							
                     }else{
                         echo "<li><a href='login.html'>Đăng nhập</a></li><li><a href='register.html'>Đăng kí</a></li>";
                     }
@@ -133,7 +137,7 @@ thẻ đường dẫn tuyệt đối
                     </li>
                     <li>
                         <div class="h_usercontrol">
-						<form action="cart.php" method="post">
+						<form action="view_cart.html">
                             <button type="submit" onclick="javascript:view_cart()">
                                 <i class="fa fa-shopping-cart icon"></i>
                                 <span class="total-items">0</span>
@@ -182,7 +186,7 @@ thẻ đường dẫn tuyệt đối
         <div>
             <input type="text" name="keyword" value="" placeholder="Bạn đang cần tìm..."/>
             <button type="submit">
-                <i class="glyphicon glyphicon-search">Search</i>
+                <i class="glyphicon glyphicon-search"></i>
             </button>
         </div>
     </form>
@@ -199,10 +203,10 @@ thẻ đường dẫn tuyệt đối
 
                     <!-- BÉ TRAI-->
                 <li  class="">
-                    <a href="betrai.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
+                    <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
                     <ul class="dropdown-menu  level-1">
                         <li>
-                            <a href="betrai/robot.html"  ">RoBot</a>
+                            <a href="search.php?keyword=robot">RoBot</a>
                             <!--    <ul class="dropdown-menu sub-menu level-2">
                                     <li ><a href="betrai/robot/sieuanhhung.html">Siêu Anh Hùng</a></li>
                                     <li ><a href="betrai/robot/robotbienhinh.html">RoBot Biến Hình</a></li>
@@ -211,7 +215,7 @@ thẻ đường dẫn tuyệt đối
                             -->
                         </li>
                         <li>
-                            <a href="betrai/dochoivandong.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">Đồ Chơi Vận Động </a>
+                            <a href="search.php?keyword=vandong" class="parent dropdown-toggle disabled" data-toggle="dropdown">Đồ Chơi Vận Động </a>
                             <!--    <ul class="dropdown-menu sub-menu level-2">
                                     <li ><a href="betrai/dochoivandong/xedap.html">Xe Đạp</a></li>
                                     <li ><a href="betrai/dochoivandong/xetruot.html">Xe Trượt</a></li>
@@ -219,19 +223,19 @@ thẻ đường dẫn tuyệt đối
                                 </ul>
                             -->
                         </li>
-                        <li ><a href="betrai/game.html">Game</a></li>
-                        <li ><a href="betrai/dochoitritue.html">Đồ Chơi Trí Tuệ</a></li>
-                        <li ><a href="betrai/dochoitheophim.html">Đồ Chơi Theo Phim</a></li>
+                        <li ><a href="search.php?keyword=game">Game</a></li>
+                        <li ><a href="search.php?keyword=dochoitritue">Đồ Chơi Trí Tuệ</a></li>
+                        <li ><a href="search.php?keyword=dochoitheophim">Đồ Chơi Theo Phim</a></li>
                     </ul> 
                 </li>
                     <!--END BÉ TRAI-->
                                 
                     <!-- BÉ GÁI-->
                 <li  class="active">
-                    <a href="begai.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ GÁI</a><i class="fa fa-caret-down"></i>
+                    <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ GÁI</a><i class="fa fa-caret-down"></i>
                     <ul class="dropdown-menu  level-1">
                         <li>
-                            <a href="begai/bupbe.html" class="parent dropdown-toggle disabled"data-toggle="dropdown">Búp Bê</a>
+                            <a href="search.php?keyword=bupbe" class="parent dropdown-toggle disabled"data-toggle="dropdown">Búp Bê</a>
                             <!--
                             <a href="begai/bupbe.html" class="parent dropdown-toggle disabled"data-toggle="dropdown">Búp Bê<i class="fa fa-caret-right"></i></a>
                                 <ul class="dropdown-menu sub-menu level-2">
@@ -241,7 +245,7 @@ thẻ đường dẫn tuyệt đối
                             --> 
                         </li>
                         <li>
-                            <a href="begai/lamdieuchobe.html" class="parent dropdown-toggle disabled" data-toggle="dropdown">Làm Điệu Cho Bé</a>
+                            <a href="search.php?keyword=" class="parent dropdown-toggle disabled" data-toggle="dropdown">Làm Điệu Cho Bé</a>
                             <!--
                                 <ul class="dropdown-menu sub-menu level-2">
                                     <li ><a href="begai/lamdieuchobe/vivatuixach.html">Ví và Túi Xách</a></li>
@@ -250,9 +254,9 @@ thẻ đường dẫn tuyệt đối
                                 </ul>
                             -->
                         </li>
-                        <li ><a href="begai/dodungnhabep.html">Đồ Dùng Nhà Bếp</a></li>
-                        <li ><a href="begai/kheotayhaylam.html">Khéo Tay Hay Làm</a></li>
-                        <li ><a href="begai/dochoitheophim.html">Đồ Chơi Theo Phim</a></li>
+                        <li ><a href="search.php?keyword=">Đồ Dùng Nhà Bếp</a></li>
+                        <li ><a href="search.php?keyword=">Khéo Tay Hay Làm</a></li>
+                        <li ><a href="search.php?keyword=dochoitheophim ">Đồ Chơi Theo Phim</a></li>
                     </ul>         
                 </li>
                     <!-- END BÉ GÁI-->
@@ -506,12 +510,11 @@ thẻ đường dẫn tuyệt đối
     <div class="row five-cols-products" id="products-group">  
              
             <?php
-					$per_page = 12;
-					mysql_connect("localhost","root","");
-					mysql_select_db("kiddytoys");
+					$per_page = 20;
+					$conn = mysqli_connect('localhost', 'root', '', 'kiddytoys');
 					//count product
-					$res_cou = mysql_query("SELECT Idproduce from product");
-					$cou = mysql_num_rows($res_cou);
+					$res_cou = mysqli_query($conn,"SELECT Idproduce from product");
+					$cou = mysqli_num_rows($res_cou);
 					if(isset($_GET["page"]))
 						$page = $_GET["page"];
 					else $page = 0;
@@ -524,12 +527,12 @@ thẻ đường dẫn tuyệt đối
 					else{
 						$page_num = ($page*$per_page) -	$per_page;
 					}
-					$res=mysql_query("SELECT productname, price,category,imglink, Idproduce	 FROM product limit $page_num, $per_page");
-					while($row=mysql_fetch_array($res)){
+					$res=mysqli_query($conn, "SELECT productname, price,category,imglink, Idproduce	 FROM product limit $page_num, $per_page");
+					while($row=mysqli_fetch_array($res)){
 						echo '<div class="item">';
 							echo '<div class="p-item" itemscope >';
 								echo '<figure class="p-img">';
-									echo '<a href="http://Kiddytoys.vn/xedieukhiencyklon.html" itemprop="url">';
+									echo '<a href="product.php?product='.$row["Idproduce"].'" itemprop="url">';
 										echo '<img src="'.$row["imglink"].'" alt="Xe điều khiển cyklon" title="Xe điều khiển cyklon" class="img-responsive" itemprop="image" >';
                                     echo '</a>';
 								echo '</figure>';
@@ -539,9 +542,7 @@ thẻ đường dẫn tuyệt đối
                             echo '</h3>';
                             echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
 					echo '<div class="clearfix">';
-					//chi tiet san pham -->
-					echo '<form action="product.php" method="GET"><button type="submit" class="btn btn-success" name="product" value='.$row["Idproduce"].'>Chi tiết</button></form>';
-					//them san pham vao gio hang -->
+					
 					echo '<form action="cart_update.php" method="post"><button type="submit" class="btn btn-danger" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
                 echo '</div></div></div></div>';
 				
@@ -563,52 +564,6 @@ thẻ đường dẫn tuyệt đối
 </div>
 
 
-
-<!-- Script lướt ảnh, hiện thị 5 sản phẩm -->
-<script>
-$('.five-cols-products').slick({
-  dots: false,
-  navs: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  adaptiveHeight: true,
-  arrows: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        dots: true,
-        arrows: false
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: true,
-        arrows: false
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        dots: true,
-        arrows: false
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
-</script>
     </div>
     <!--FOOTER-->
     <footer id="footer" class="clearfix">
@@ -858,11 +813,12 @@ $('.testimonials-grid').slick({
 <p><span>Văn Phòng: </span>KTX Khu B, Dĩ An, Bình Dương, Việt Nam</span></p>
 
 <p><a href="http://online.gov.vn/HomePage/da-thong-bao" target="_blank" title="Đã Thông Báo Trang TMĐT"><img alt="Đã thông báo với Bộ Công Thương" src="uploads/products/da-thong-bao-bo-cong-thuong.png" /></a></p>    
+   
 </div>
 
         </div>
     </footer>
-
+ 
     
 </body>
 </html>

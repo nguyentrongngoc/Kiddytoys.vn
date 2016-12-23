@@ -18,7 +18,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode("KiddyToys.vn") ?></title>
+    <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -27,7 +27,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'ADMIN',
+        'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -36,11 +36,11 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Product', 'url' => ['/product/index']],
+           ['label' => 'Product', 'url' => ['/product/index']],
             ['label' => 'User', 'url' => ['/user/index']],
-            ['label' => 'Cart', 'url' => ['/cart/index']],
+           
             Yii::$app->user->isGuest ? (
-                ['label' => '', 'url' => ['/site/login']]
+                ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
@@ -66,9 +66,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        &copy; 2016 | &nbsp; All Rights Reserved | Design by: Bui Le Huynh (Lawliet)<br>
-		Email: binhnguyen2805@gmail.com<br>
-		Phone: 0973154950
+        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+
+        <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
 

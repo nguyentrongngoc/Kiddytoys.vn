@@ -8,9 +8,9 @@ use yii\data\ActiveDataProvider;
 use app\models\Product;
 
 /**
- * productSearch represents the model behind the search form about `app\models\Product`.
+ * ProductSearch represents the model behind the search form about `app\models\Product`.
  */
-class productSearch extends Product
+class ProductSearch extends Product
 {
     /**
      * @inheritdoc
