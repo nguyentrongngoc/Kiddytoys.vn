@@ -21,28 +21,28 @@
       <script>
 
 
-			$("#divCart").append(result);
-			$("#divCart").append(result);
-			$("#divCart").append(result);
-			$("#divCart").append(result);
-			$("#divCart").append(result);
-			$("#divCart").append(result);
+      $("#divCart").append(result);
+      $("#divCart").append(result);
+      $("#divCart").append(result);
+      $("#divCart").append(result);
+      $("#divCart").append(result);
+      $("#divCart").append(result);
         };
 
-		function getCookie(cname) {
-		    var name = cname + "=";
-		    var ca = document.cookie.split(';');
-		    for(var i = 0; i <ca.length; i++) {
-		        var c = ca[i];
-		        while (c.charAt(0)==' ') {
-		            c = c.substring(1);
-		        }
-		        if (c.indexOf(name) == 0) {
-		            return c.substring(name.length,c.length);
-		        }
-		    }
-		    return "";
-		}
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length,c.length);
+            }
+        }
+        return "";
+    }
 </script>
 </head>
 <body>
@@ -58,7 +58,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Kiddytoys.vn</a>
+      <a class="navbar-brand" href="index.html">ChoDienTu.vn</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -66,7 +66,7 @@
           <!-- <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">Sản Phẩm</a></li>
-			<li><a href="#">About Us</a></li>            
+      <li><a href="#">About Us</a></li>            
     </ul> -->
     <ul class="nav navbar-nav navbar-right">
       <li><a href="viewcart.html"><i class="glyphicon glyphicon-shopping-cart"></i> Giỏ Hàng <span class="label label-danger">42</span></a></li>
@@ -78,21 +78,21 @@
 </nav>
 
 <!-- Place your code at here! -->
-<div id="main">		
-  <div class="container">		
-	<h3><i class="glyphicon glyphicon-shopping-cart"></i> Giỏ hàng của bạn</h3>  
-	<hr>
-	<table id="divCart" class="table table-responsive">
-		<th>SẢN PHẨM</th>
-		<th></th>
-		<th>ĐƠN GIÁ</th>	
-		<th>SỐ LƯỢNG</th>	
-		<th>THÀNH TIỀN</th>		
-	</table>
-	<hr>
-	<h4 class="pull-right">Thành tiền: <span style="color:darkred">4.000.000 đ</span></h4>
-	<span class="clearfix"></span>
-	<button class="btn btn-danger pull-right">Tiến hành thanh toán</button>
+<div id="main">   
+  <div class="container">   
+  <h3><i class="glyphicon glyphicon-shopping-cart"></i> Giỏ hàng của bạn</h3>  
+  <hr>
+  <table id="divCart" class="table table-responsive">
+    <th>SẢN PHẨM</th>
+    <th></th>
+    <th>ĐƠN GIÁ</th>  
+    <th>SỐ LƯỢNG</th> 
+    <th>THÀNH TIỀN</th>   
+  </table>
+  <hr>
+  <h4 class="pull-right">Thành tiền: <span style="color:darkred">4.000.000 đ</span></h4>
+  <span class="clearfix"></span>
+  <button class="btn btn-danger pull-right">Tiến hành thanh toán</button>
   </div>
 </div> 
 

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2016 at 02:16 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.5.38
+-- Generation Time: Dec 23, 2016 at 05:42 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -64,9 +64,6 @@ INSERT INTO `product` (`Idproduce`, `productname`, `price`, `category`, `imglink
 (12, 'Xe BMW', 10000, 'robot', 'uploads/products/101425908xe-bmw-i8-514.jpg'),
 (13, 'Chó Berhard', 1000, 'thubong', 'uploads/products/158443018cho-st--bernhard343.jpg'),
 (14, 'Xe Múc', 1000, 'robot', 'uploads/products/168727614xe-xuc-dao-mini779.jpg'),
-(15, 'Terrakion', 10000, 'dochoitheophim', 'uploads/products/207542281do-choi-thu-nhua--m-049-terrakion-436.jpg'),
-(16, 'Shandera', 10000, 'dochoitheophim', 'uploads/products/218687512do-choi-thu-nhua--m-005-shandera-125.jpg'),
-(17, 'Lọ lem', 10000, 'dochoitheophim', 'uploads/products/236717828thoi-trang-cua-lo-lem-mini848.jpg'),
 (18, 'Chó Chăn Cừu Đức', 10000, 'thubong', 'uploads/products/250143744cho-chan-cuu-duc10.jpg'),
 (19, 'Xe ben mini', 10000, 'robot', 'uploads/products/285515868xe-ben-mini651.jpg'),
 (20, 'Xe điều khiển', 10000, 'robot', 'uploads/products/286634695murcielago-lp670-4-581.jpg'),
@@ -174,7 +171,14 @@ INSERT INTO `user` (`ID`, `name`, `phone`, `email`, `pass`) VALUES
 (28, 'phuoctan', '000000000000', 'phuoctan@gmail.com', 'tan12'),
 (29, '222', '2212222', 'nguye2ntrongngoc1995@gmail.com', '22'),
 (30, 'trinh trong tin', '02922222', 'tintrinh@gmail.com', 'tin123'),
-(31, 'hehe', 'admin', 'sssss@gmail.com', 'admin');
+(31, 'hehe', 'admin', 'sssss@gmail.com', 'admin'),
+(32, 'vanphong2', '0033', 'vanphong2@gmail.com', 'phong12'),
+(33, 'Nguyen Trong Ngoc2', '22', 'nguyen3trongngoc1995@gmail.com', 'ngoc12'),
+(34, 'admin', '000000000', 'admin@gmail.com', 'admin'),
+(35, 'huynh1', 'admin22', 'huynh1@gmail.com', 'huynh123'),
+(36, 'thaivu', '221', 'thaivu@gmail.com', 'thaivu123'),
+(37, 'ss', 'adminss', 'ss@gmail.com', 'adminss'),
+(38, 'Nguyá»…n Trá»ng NhÃ¢n', '0975883367', 'nguyentrongnhan@gmail.com', 'nhan123');
 
 --
 -- Indexes for dumped tables
@@ -211,7 +215,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -11,8 +11,6 @@ thẻ đường dẫn tuyệt đối
 <base href="http://Kiddytoys.vn/" />
  -->
 <link rel="icon" href="assets/front/img/icon.png" type="image/x-icon" />
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Thiên Đường Đồ Chơi Trẻ Em</title>
 <meta name="description" content="Kiddytoys là trang thương mại điện tử chuyên bán các mặt hàng đồ chơi trẻ em, đa mẫu mã, chủng loại." />
@@ -59,26 +57,13 @@ thẻ đường dẫn tuyệt đối
                             <i class="glyphicon glyphicon-phone"></i>
                             Dịch vụ khách hàng: <b>(+84) 969 53 57 56</b>
                         </li>
-                        <li class="hidden-xs">
-                            <i class="glyphicon glyphicon-bed"></i>
-                            <a target="_blank" href="mua-sam-online/giao-hang-va-nhan-hang/">Giao Hàng Nhanh</a>
-                        </li>
-                            <!-- -->
-                        <li class="hidden-xs">
-                            <i class="glyphicon glyphicon-refresh"></i>
-                                <a target="_blank" href="khach-hang/cam-ket-hai-long/">Cam Kết Hài Lòng</a>
-                        </li>
-                            <!-- -->
+
                     </ul>
-                    
-                        <!-- -->
-            
+ 
                 </div>
             </div>
         </div>
-            <!-- -->
-
-<div class="clearfix">
+           
     <div class="container">
         <div class="row">
             
@@ -113,27 +98,24 @@ thẻ đường dẫn tuyệt đối
                 <?php
                        
                         if (isset($_SESSION['email'])){
-							if($_SESSION['email'] == 'admin@gmail.com'){
-								echo "<li><a href='admin/web/index.php'>Admin</a></li>";
-							}
+                            if($_SESSION['email'] == 'admin@gmail.com'){
+                                echo "<li><a href='admin/web/index.php'>Admin</a></li>";
+                            }
                             echo "<li><a href='#'>Hi, ".$_SESSION['email']."</a></li>";
                             echo "<li><a href='logout.php'>Log out</a></li>";
-							
+                            
                     }else{
                         echo "<li><a href='login.html'>Đăng nhập</a></li><li><a href='register.html'>Đăng kí</a></li>";
                     }
                 ?>
-                                    <li><a href="user.html">Tài khoản của tôi</a></li>
-                                    <li><a href="user/order.html">Quản lý đơn hàng</a></li>
-                                    <li><a href="user/comment.html">Đánh giá của tôi</a></li>
-                                    <li><a href="kiem-tra-don-hang.html">Kiểm tra đơn hàng</a></li>
+          
                                 </ul>
                             </div>
                         </div>                
                     </li>
                     <li>
                         <div class="h_usercontrol">
-						<form action="view_cart.html">
+                        <form action="view_cart.html">
                             <button type="submit" onclick="javascript:view_cart()">
                                 <i class="fa fa-shopping-cart icon"></i>
                                 <span class="total-items">0</span>
@@ -141,9 +123,10 @@ thẻ đường dẫn tuyệt đối
                                     <b>Giỏ hàng</b> 
                                 </span>
                             </button>
-						</form>
+                        </form>
                         </div>
                     </li>
+                        <!-- -->
                 </ul>                
             </div>                
         
@@ -151,43 +134,7 @@ thẻ đường dẫn tuyệt đối
     
     </div>
 </div>
-
-
     <!-- -->
-
-
-<div class="visible-xs clearfix" id="visiable-xsnav">
-    <div class="col-xs-4">
-        <button type="button" data-toggle="collapse" data-target="#hnav-group-xs" aria-expanded="false" aria-controls="hnav-group-xs" ><i class="glyphicon glyphicon-list"></i></button>
-    </div>
-    
-    <div class="col-xs-4 text-right">
-        <a onclick="javascript:view_cart()" class="link"> 
-         <span class="so-cart" >
-                 0            </span>
-            <i class="glyphicon glyphicon-shopping-cart pull-left"></i>
-        </a>
-    </div>
-        <div class="col-xs-4 text-right">
-            <a href="login.html" class="link">
-                <span class="pull-right hidden-xs hidden-sm">
-                        Đăng Nhập
-                </span>
-                <i class="glyphicon glyphicon-user pull-right"></i>
-            </a>
-        </div>
-    <!--                 2 FORM TÌM KIẾM VÌ TRONG DIV hiển thị cho di động-->  
-    <form action="san-pham/search.php" method="get">
-        <div>
-            <input type="text" name="keyword" value="<?php echo $keyword; ?>" placeholder="Bạn đang cần tìm..."/>
-            <button type="submit">
-                <i class="glyphicon glyphicon-search"></i>
-            </button>
-        </div>
-    </form>
-
-    
-</div>
     <!--THANH MENU-->
 <nav class="clearfix hidden-xs" id="hnav-group">
     <div class="container">
@@ -195,10 +142,7 @@ thẻ đường dẫn tuyệt đối
                 <li  class="">
                     <a href="index.php" class="" >TRANG CHỦ </a>
                 </li>
-                    <!-- List-->
-                <li  class="">
-                    <a href="productlist.php" class="" >Tất Cả </a>
-                </li>
+
                     <!-- BÉ TRAI-->
                 <li  class="">
                     <a href="#" class="parent dropdown-toggle disabled" data-toggle="dropdown">ĐỒ CHƠI BÉ TRAI<i class="fa fa-caret-down"></i></a>
@@ -253,6 +197,7 @@ thẻ đường dẫn tuyệt đối
                             -->
                         </li>
                         <li ><a href="search.php?keyword=">Đồ Dùng Nhà Bếp</a></li>
+                        <li ><a href="search.php?keyword=">Khéo Tay Hay Làm</a></li>
                         <li ><a href="search.php?keyword=dochoitheophim ">Đồ Chơi Theo Phim</a></li>
                     </ul>         
                 </li>
@@ -260,76 +205,48 @@ thẻ đường dẫn tuyệt đối
 
                     <!-- KHUYẾN MÃI-->
                 <li  class="">
-                    <a href="khuyenmai.html" class="" >GIÁ TỐT<span>-30%</span></a>
+                    <a href="productlist.php" class="" >TẤT CẢ SẢN PHẨM<!-- <span>-30%</span> --></a>
                 </li>
         </ul>
     </div>
 </nav>
     <!-- END THANH MENU-->
 
-                   <!-- MENU HIỂN THỊ TRÊN ĐIỆN THOẠI -->
-<nav class="clearfix collapse" id="hnav-group-xs">
-    <div class="container">
-        <ul class="clearfix">
-            <li>
-                    <a href="http://Kiddytoys.vn/"><i class="glyphicon glyphicon-home"></i></a>
-            </li>
-            <li>
-                    <a href="http://Kiddytoys.vn/"> TRANG CHỦ </a>
-            </li>
-            
-            <li  >
-                    <a href="betrai.html"> ĐỒ CHƠI BÉ TRAI </a>
-            </li>
-            
-            <li  class="active">
-                    <a href="begai.html"> ĐỒ CHƠI BÉ GÁI </a>
-            </li>
-            
-            <li>
-                    <a href="khuyenmai/.html"> GIÁ TỐT <span>-30%</span></a>
-            </li>
-           
-            
-        </ul>
-    
-    </div>
-
-</nav>
+                  
 
     </header>
         
                
     </body>
 </div>
-                <!-- Sao cmt vào json dc, json ở trên hiển thị di động thì phải. Từ từ có ảnh, có banner thì sửa code thử-->
+             
 
                 <!-- BANNER QUẢNG CÁO--> <!-- tạo banner nhớ chỉnh lại 1349x485-->
     <div id="slick" class="slick home-slider clearfix hidden-xs">
     
         <div class="slider">
             <div class="slide">
-                <a href="khuyenmai.html">
+                <a href="#">
                     <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
                 </a>
             </div>
             <div class="slide">
-                <a href="khuyenmai.html">
+                <a href="#">
                     <img src="uploads/slide/banner33.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
                 </a>
             </div>
             <div class="slide">
-                <a href="http://Kiddytoys.vn/khuyenmai.html">
+                <a href="#">
                     <img src="uploads/slide/banner22.jpg" alt="Khuyến mãi" title="Khuyến mãi" />
                 </a>
             </div>
             <div class="slide">
-                <a href="betrai.html">
+                <a href="#">
                     <img src="uploads/slide/banner33.jpg" alt="Bé Trai" title="Bé Trai" />
                 </a>
             </div>
             <div class="slide">
-                <a href="begai.html">
+                <a href="#">
                     <img src="uploads/slide/banner22.jpg" alt="Bé Gái" title="Bé Gái" />
                 </a>
             </div>
@@ -366,7 +283,7 @@ thẻ đường dẫn tuyệt đối
 <div class="clearfix hidden-xs">
 
 <a name="home_scrollproduct" id="home_scrollproduct"></a>
-    <div class="clearfix">
+         <div class="clearfix">
         <h1 class="clearfix title-lg border f-title">
             <span>GỢI Ý CHO BẠN</span>
         </h1>
@@ -381,7 +298,7 @@ thẻ đường dẫn tuyệt đối
                         <div class="clearfix" id="home-nav-product">
                             
                             <div class="col-xs-9 pimg-lg">
-                                <a href="http://Kiddytoys.vn/.....html">
+                                <a href="product.php?product=81">
                                 <img src="uploads/products/pokemon-pikachu.jpg" alt="Pokemon - Pikachu" title="Pokemon - Pikachu" class="img-responsive img-lg" />
                                 </a>
                             </div>
@@ -389,19 +306,19 @@ thẻ đường dẫn tuyệt đối
                             
                                                                 
                                     <li >
-                                        <a href="http://Kiddytoys.vn/.....html">
+                                        <a href="product.php?product=80">
                                         <img src="uploads/products/pokemon-meohoatien.jpg" alt="Pokemon - Mèo Hỏa Tiễn " title="Pokemon - Mèo Hỏa Tiễn " class="img-responsive" />
                                         </a>
                                     </li>
                                                                 
                                     <li >
-                                        <a href="http://Kiddytoys.vn/.....html">
+                                        <a href="product.php?product=77">
                                         <img src="uploads/products/pokemon-chuotlua.jpg" alt="Pokemon - Chuột Lửa" title="Pokemon - Chuột Lửa" class="img-responsive" />
                                         </a>
                                     </li>
                                                                 
                                     <li class="p-last">
-                                        <a href="http://Kiddytoys.vn/......html">
+                                        <a href="product.php?product=79">
                                         <img src="uploads/products/pokemon-galua.jpg" alt="Pokemon - Gà Lửa" title="Pokemon - Gà Lửa" class="img-responsive" />
                                         </a>
                                     </li>
@@ -413,7 +330,7 @@ thẻ đường dẫn tuyệt đối
                         <div class="clearfix nav-caption row">
                             <div class="col-md-9 col-xs-12 caption-text">
                                 <h2 class="title">
-                                    <a href="http://Kiddytoys.vn/.....html">Pokemon</a>
+                                    <a href="#">Pokemon</a>
                                 </h2>
                                 Thú bông Pokemon đủ mẫu mã, đa dạng cho các bé.                          
                             </div>
@@ -421,7 +338,7 @@ thẻ đường dẫn tuyệt đối
                             <ul class="col-sm-3 hidden-xs hidden-sm caption-list">
                                 <li>4 sản phẩm</li>
                                 <li>Từ 60,000&nbsp;<u>đ</u> </li>
-                                <li><a href="http://Kiddytoys.vn/.....html">Xem tất cả</a></li>
+                                <li><a href="search.php?keyword=dochoitheophim">Xem tất cả</a></li>
                             </ul>                            
                             
                         </div>
@@ -442,7 +359,7 @@ thẻ đường dẫn tuyệt đối
                         <div class="clearfix" id="home-nav-product">
                             
                             <div class="col-xs-9 pimg-lg">
-                                <a href="http://Kiddytoys.vn/.....html">
+                                <a href="product.php?product=37">
                                 <img src="uploads/products/bupbe-elsa.jpg" alt="Búp Bê - Elsa" title="Búp Bê - Elsa" class="img-responsive img-lg" />
                                 </a>
                             </div>
@@ -450,19 +367,19 @@ thẻ đường dẫn tuyệt đối
                             
                                                                 
                                     <li >
-                                        <a href="http://Kiddytoys.vn/.....html">
+                                        <a href="product.php?product=63">
                                         <img src="uploads/products/bupbesunset.jpg" alt="Búp Bê - Sunset" title="Búp Bê - Sunset" class="img-responsive" />
                                         </a>
                                     </li>
                                                                 
                                     <li >
-                                        <a href="http://Kiddytoys.vn/.....html">
+                                        <a href="product.php?product=27">
                                         <img src="uploads/products/bupbe-nangtienca.jpg" alt="Búp Bê - Nàng Tiên Cá" title="Búp Bê - Nàng Tiên Cá" class="img-responsive" />
                                         </a>
                                     </li>
                                                                 
                                     <li class="p-last">
-                                        <a href="http://Kiddytoys.vn/.....html">
+                                        <a href="product.php?product=24">
                                         <img src="uploads/products/bupbe-nangbachtuyet.jpg" alt="Búp Bê - Nàng Bạch Tuyết" title="Búp Bê - Nàng Bạch Tuyết" class="img-responsive" />
                                         </a>
                                     </li>
@@ -474,7 +391,7 @@ thẻ đường dẫn tuyệt đối
                         <div class="clearfix nav-caption row">
                             <div class="col-md-9 col-xs-12 caption-text">
                                 <h2 class="title">
-                                    <a href="http://Kiddytoys.vn/....html">Búp Bê</a>
+                                    <a href="#">Búp Bê</a>
                                 </h2>
                                 Búp Bê đủ mẫu mã, màu sắc, thỏa sức bé yêu lựa chọn.
                             </div>
@@ -482,7 +399,7 @@ thẻ đường dẫn tuyệt đối
                             <ul class="col-sm-3 hidden-xs hidden-sm caption-list">
                                 <li>4 sản phẩm</li>
                                 <li>Từ 30,000&nbsp;<u>đ</u> </li>
-                                <li><a href="http://Kiddytoys.vn/.....html">Xem tất cả</a></li>
+                                <li><a href="search.php?keyword=dochoitheophim">Xem tất cả</a></li>
                             </ul>                            
                             
                         </div>
@@ -499,7 +416,7 @@ thẻ đường dẫn tuyệt đối
         </div>
     
     
-    </div>
+    </div> 
 
     <h2 class="clearfix title-lg border f-title">
         <span>Tất Cả Sản Phẩm</span>
@@ -507,56 +424,59 @@ thẻ đường dẫn tuyệt đối
     <div class="row five-cols-products" id="products-group">  
              
             <?php
-					$per_page = 20;
-					$conn = mysqli_connect('localhost', 'root', '', 'kiddytoys');
-					//count product
-					$res_cou = mysqli_query($conn,"SELECT Idproduce from product");
-					$cou = mysqli_num_rows($res_cou);
-					if(isset($_GET["page"]))
-						$page = $_GET["page"];
-					else $page = 0;
-					if($page=="" || $page < "1"|| $page=="1"){
-						$page_num = 0;
-					}
-					else if($page > ceil($cou/$per_page)){
-						$page_num =  ceil($cou/$per_page);
-					}
-					else{
-						$page_num = ($page*$per_page) -	$per_page;
-					}
-					$res=mysqli_query($conn, "SELECT productname, price,category,imglink, Idproduce	 FROM product limit $page_num, $per_page");
-					while($row=mysqli_fetch_array($res)){
-						echo '<div class="item">';
-							echo '<div class="p-item" itemscope >';
-								echo '<figure class="p-img">';
-									echo '<a href="product.php?product='.$row["Idproduce"].'" itemprop="url">';
-										echo '<img src="'.$row["imglink"].'" alt="Xe điều khiển cyklon" title="Xe điều khiển cyklon" class="img-responsive" itemprop="image" >';
+                    $per_page = 20;
+                    $conn = mysqli_connect('localhost', 'root', '', 'kiddytoys');
+                    //để viết tiếng việt.
+                    mysqli_set_charset($GLOBALS['conn'],'utf8');
+
+                    //count product
+                    $res_cou = mysqli_query($conn,"SELECT Idproduce from product");
+                    $cou = mysqli_num_rows($res_cou);
+                    if(isset($_GET["page"]))
+                        $page = $_GET["page"];
+                    else $page = 0;
+                    if($page=="" || $page < "1"|| $page=="1"){
+                        $page_num = 0;
+                    }
+                    else if($page > ceil($cou/$per_page)){
+                        $page_num =  ceil($cou/$per_page);
+                    }
+                    else{
+                        $page_num = ($page*$per_page) - $per_page;
+                    }
+                    $res=mysqli_query($conn, "SELECT productname, price,category,imglink, Idproduce  FROM product limit $page_num, $per_page");
+                    while($row=mysqli_fetch_array($res)){
+                        echo '<div class="item">';
+                            echo '<div class="p-item" itemscope >';
+                                echo '<figure class="p-img">';
+                                    echo '<a href="product.php?product='.$row["Idproduce"].'" itemprop="url">';
+                                        echo '<img src="'.$row["imglink"].'" alt="Xe điều khiển cyklon" title="Xe điều khiển cyklon" class="img-responsive" itemprop="image" >';
                                     echo '</a>';
-								echo '</figure>';
+                                echo '</figure>';
                         echo '<div class="clearfix p-caption">';
                             echo '<h3 title="Xe điều khiển cyklon" class="p-title">';
                                 echo '<a href="#" itemprop="name">'.$row["productname"].'</a>';
                             echo '</h3>';
-                            echo '<p class="p-price" itemprop="price"><s itemprop="highPrice">'.($row["price"]*1.5).'&nbsp;<u>đ</u></s><span class="hidden-xs hidden-sm">&nbsp;-&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
-					echo '<div class="clearfix">';
-					
-					echo '<form action="cart_update.php" method="post"><button type="submit" class="btn btn-info" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
+                            echo '<p class="p-price" itemprop="price"></u></s><span class="hidden-xs hidden-sm">&nbsp;&nbsp;</span><b itemprop="lowPrice">'.$row["price"].'&nbsp;<u>đ</u></b></p>';
+                    echo '<div class="clearfix">';
+                    
+                    echo '<form action="cart_update.php" method="post"><button type="submit" class="btn btn-info" name="cart" value='.$row["Idproduce"].'>Đặt mua</button></form>';
                 echo '</div></div></div></div>';
-				
-					}
-				//count number of page
-				$a = ceil($cou/$per_page); //a is number of page
-				?>
-		</div>
-					<div class="row">
-						<ul class="pagination alg-right-pad">
-							<?php
-								for($b = 1; $b <= $a; $b++){
-								?><li><a href="productlist.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php	
-							}
-							?>
-						</ul>
-					</div>
+                
+                    }
+                //count number of page
+                $a = ceil($cou/$per_page); //a is number of page
+                ?>
+        </div>
+                    <div class="row">
+                        <ul class="pagination alg-right-pad">
+                            <?php
+                                for($b = 1; $b <= $a; $b++){
+                                ?><li><a href="index.php?page=<?php echo $b;?>"> <?php echo $b." "; ?></a><?php 
+                            }
+                            ?>
+                        </ul>
+                    </div>
         
 </div>
 
@@ -565,255 +485,11 @@ thẻ đường dẫn tuyệt đối
     <!--FOOTER-->
     <footer id="footer" class="clearfix">
         
-        <div class="testimonials">
-    <div class="container">
-        <h2>Ý Kiến Khách Hàng</h2>
-        <div class="row testimonials-grid">
-                <div class="col-sm-3 col-xs-12 item">
-                    <div class="quote">
-                            Hàng chất lượng, bền đẹp                
-                    </div>
-                <div class="user">
-                    <div class="avatar">
-                        <img src="uploads/testimonials/reviews_thu_ngo.jpg" />
-                    </div>
-                    <div class="user-info">
-                        <p class="name">Thu Ngo</p>
-                        <p class="title">Ho Chi Minh City, Vietnam</p>
-                    </div>
-                </div>
-                            </div>
-                                    <div class="col-sm-3 col-xs-12 item">
-                                <div class="user">
-                    <div class="avatar">
-                        <img src="uploads/testimonials/reviews_trang.jpg" />
-                    </div>
-                    <div class="user-info">
-                        <p class="name">Ánh Nguyễn</p>
-                        <p class="title">Mẹ Bỉm Sữa</p>
-                    </div>
-                </div>
-                <div class="quote">
-                    Web chuyên nghiệp, Tư vấn nhiệt tình, giao hàng quá nhanh.. 
-Quá tuyệt !             </div>
-                            </div>
-                                    <div class="col-sm-3 col-xs-12 item">
-                                <div class="quote">
-                    Mình nhận được đơn hàng rồi nha. Dịch vụ tốt. Sản phẩm rất đẹp ak               </div>
-                <div class="user">
-                    <div class="avatar">
-                        <img src="uploads/testimonials/Capture2.PNG" />
-                    </div>
-                    <div class="user-info">
-                        <p class="name">Nguyễn Thanh Mai</p>
-                        <p class="title">Giáo Viên Mầm Non</p>
-                    </div>
-                </div>
-                            </div>
-                                    <div class="col-sm-3 col-xs-12 item">
-                                <div class="user">
-                    <div class="avatar">
-                        <img src="uploads/testimonials/reviews_Kiti_Luna.jpg" />
-                    </div>
-                    <div class="user-info">
-                        <p class="name">Thùy Giang Phạm</p>
-                        <p class="title">Accountant tại Nagase Co.,Ltd</p>
-                    </div>
-                </div>
-                <div class="quote">
-                    Nhân viên rất nhiệt tình, sản phẩm chất lượng. Mình đã đặt sản phẩm lần 2 . Nhân viên chăm sóc khách hàng rất nice. Mình cảm thấy vô cùng hài lòng về sản phẩm cũng như thái độ làm việc chuyên nghiệp của các bạn.             </div>
-                            </div>
-                                </div>
-    </div>
-</div>
-        <!-- Ý KIẾN KHÁCH HÀNG SLICK -->
-<script>
-$('.testimonials-grid').slick({
-  dots: true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  adaptiveHeight: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        arrows: false
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
-</script>
-        <!--END  Ý KIẾN KHÁCH HÀNG SLICK -->
-        <div class="container">
-            
-<div class="clearfix footer-border">    
-    
-    <div class="clearfix footer-form" style="background-image:url(http://lovin.vn/uploads/slide/designer_header1.jpg)">
-    
-        <div class="row">
-        
-            <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                <form action="......" method="post" target="_blank">
-                    <label>Nhận tin khuyến mãi</label>
-                    <div class="clearfix">
-                        <input type="text" name="EMAIL" placeholder="Email của bạn.">
-                        <input type="hidden" name="checkin" value="promotion" />
-                        <button type="submit" class="btn">Nhận</button>
-                    </div>
-                </
-				>
-            </div>
-                <!-- -->
-            
-        </div>
-    
-    </div>    
-    
-</div>
-    <!-- -->
-    
-    
-<div class="clearfix hidden-xs hidden-sm">
-
-    <div class="footer-col5">
-        <h2 class="f-title">Giới Thiệu</h2>
-        <ul clearfix>
-        
-                        
-                <li><a href="http://Kiddytoys.vn/gioi-thieu/ve-Kiddy-vn.html">Về Kiddytoys.vn</a></li>
-                                
-                        
-                <li><a href="http://Kiddytoys.vn/gioi-thieu/tuyen-dung.html">Tuyển dụng</a></li>
-                
-                                
-                        
-                <li><a href="http://Kiddytoys.vn/gioi-thieu/lien-he.html">Liên Hệ</a></li>
-                
-                                
-                                </ul>
-    </div>
-        <!-- -->
-    <div class="footer-col5">
-        <h2 class="f-title">Mua sắm online</h2>
-        <ul clearfix>
-                            <li><a href="http://Kiddytoys.vn/mua-sam-online/ca-nhan-hoa-truc-tuyen.html">Cá nhân hóa trực tuyến</a></li>
-                            <li><a href="http://Kiddytoys.vn/mua-sam-online/phuong-thuc-thanh-toan.html">Phương thức thanh toán</a></li>
-                            <li><a href="http://Kiddytoys.vn/mua-sam-online/giao-hang-va-nhan-hang.html">Giao hàng và nhận hàng</a></li>
-                            <li><a href="http://Kiddytoys.vn/mua-sam-online/dieu-khoan-su-dung.html">Điều khoản sử dụng</a></li>
-                    </ul>
-    </div>
-        <!-- -->
-    <div class="footer-col5">
-        <h2 class="f-title">Tài Khoản</h2>
-        <ul clearfix>
-            <li><a href="http://Kiddytoys.vn/user.html">Tài khoản của tôi</a></li>
-            <li><a href="http://Kiddytoys.vn/user/edit/thong-tin-ca-nhan.html">Cập nhật thông tin</a></li>
-            <li><a href="http://Kiddytoys.vn/user/order.html">Quản lý đơn hàng</a></li>
-            <li><a href="http://Kiddytoys.vn/user/comment.html">Đánh giá của tôi</a></li>
-        </ul>
-    </div>
-        <!-- -->
-    <div class="footer-col5">
-        <h2 class="f-title">Khách hàng</h2>
-        <ul clearfix>
-            <li><a href="http://lovin.vn/kiem-tra-don-hang.html">Kiểm tra đơn hàng</a></li>
-                            <li><a href="http://Kiddytoys.vn/khach-hang/huong-dan-dat-hang.html">Hướng dẫn đặt hàng</a></li>
-                            <li><a href="http://Kiddytoys.vn/khach-hang/cam-ket-hai-long.html">Cam kết hài lòng</a></li>
-                            <li><a href="http://Kiddytoys.vn/khach-hang/chinh-sach-bao-mat.html">Chính sách bảo mật</a></li>
-                    </ul>
-    </div>
-        <!-- -->
-    <div class="footer-col5 pluginfb">
-        
-        <div class="clearfix">
-            <div class="fb-like" data-href="https://www.facebook.com/Kiddytoys.VN.VIETNAM" data-width="226" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-        </div>
-
-            
-            
-            <div class="clearfix text-center fsocial-group">
-                <a rel="nofollow" href="https://www.facebook.com/Kiddytoys.VN.VIETNAM" target="_blank"><i class="social social-facebook"></i></a>
-                <a rel="nofollow" href="https://twitter.com/Kiddytoys" target="_blank"><i class="social social-twitter"></i></a>
-                <a rel="nofollow" href="#" target="_blank"><i class="social social-youtube"></i></a>
-                
-                
-           </div>
-    
-
-
-            
-        </div>
-    
-</div>    
-    
-    <!-- -->        
-
-<div class="clearfix visible-xs visible-sm" id="footer-xs-nav">
-    <ul clearfix>
-        <li><a href="http://Kiddytoys.vn/gioi-thieu.html">Về Kiddytoys.vn</a></li>
-        <li><a href="http://Kiddytoys.vn/user.html">Tài khoản của tôi</a></li>
-        <li><a href="http://Kiddytoys.vn/kiem-tra-don-hang.html">Kiểm tra đơn hàng</a></li>
-        <li><a href="http://Kiddytoys.vn/mua-sam-online/giao-hang-va-nhan-hang.html">Giao Hàng & Nhận Hàng</a></li>
-        <li><a href="http://Kiddytoys.vn/mua-sam-online/phuong-thuc-thanh-toan.html">Phương Thức Thanh Toán</a></li>
-        <li><a href="http://Kiddytoys.vn/khach-hang/huong-dan-dat-hang.html">Hướng Dẫn Đặt Mua</a></li>
-        <li><a href="http://Kiddytoys.vn/dieu-khoan-chinh-sach.html">Điều Khoản & Chính Sách</a></li>
-        <li><a href="http://Kiddytoys.vn/gioi-thieu/lien-he.html">Liên Hệ</a></li>
-        <li class="xs_hotline">
-            <center>
-                <b>Hotline:&nbsp;</b>
-                <span>(+84) 096 53 57 56</span>
-            </center>
-        </li>
-    </ul>
-</div>     
-<div    
-
-<div class="address hidden-lg">
-<center>
-<p><span>Công Ty TNHH Thương Mại Điện Tử Kiddytoys.vn</span></p>
-
-<p><span>Hỗ Trợ: hotro@kiddytoys.vn</p></span>
-
-<p><span>Giấy phép&nbsp;Đăng ký Kinh doanh Số 0313491797&nbsp;cấp bởi&nbsp;Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh</span></p>
-
-<p><span>Văn Phòng: </span>KTX Khu B, Dĩ An, Bình Dương, Việt Nam</span></p>
-
-<p><a href="http://online.gov.vn/HomePage/webdkbocongthuong" target="_blank" title="Đã Thông Báo Trang TMĐT"><img alt="Đã thông báo với Bộ Công Thương" src="uploads/products/da-thong-bao-bo-cong-thuong.png"></a>
-</center>
-</div>   
-     
-<div class="clearfix footer-auhor f-title visible-lg">
-
-    <p><span style="font-size:14px;">&copy; 2016&nbsp;Bản quyền Trang Thương Mại Điện Tử&nbsp;<a href="http://Kiddytoys.vn/" target="_blank">Kiddytoys.vn</a>. </span></p>
-
-<p>C&ocirc;ng Ty TNHH Thương Mại Điện Tử Kiddytoys</p>
-
-<p><span style="font-size:14px;">Hỗ trợ: hotro@Kiddytoys.vn - </span>Holine: 0969 53 57 56 -&nbsp;</p>
-
-<p>Giấy ph&eacute;p&nbsp;Đăng k&yacute; Kinh doanh Số 0313491797&nbsp;cấp bởi&nbsp;Sở Kế hoạch v&agrave; Đầu tư Th&agrave;nh phố Hồ Ch&iacute; Minh</p>
-
-<p><span>Văn Phòng: </span>KTX Khu B, Dĩ An, Bình Dương, Việt Nam</span></p>
-
-<p><a href="http://online.gov.vn/HomePage/da-thong-bao" target="_blank" title="Đã Thông Báo Trang TMĐT"><img alt="Đã thông báo với Bộ Công Thương" src="uploads/products/da-thong-bao-bo-cong-thuong.png" /></a></p>    
-   
-</div>
-
-        </div>
+    <center> <div class="col-lg-12" id="contact">
+                    <p>Copyright &copy; Kiddytoys.vn<br/>
+                    Nguyễn Trọng Ngọc - 13520551<br/>Hoàng Minh Trang - 13520908</p>
+                </div></center>
+ 
     </footer>
  
     
